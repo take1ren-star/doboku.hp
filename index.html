@@ -68,7 +68,7 @@
   <header style="position:relative; padding:clamp(40px,7vw,96px) clamp(20px,5vw,72px) clamp(60px,8vw,110px); max-width:1320px; margin:0 auto;">
     <!-- full-bleed hero photo -->
     <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:100vw; height:100%; z-index:0; overflow:hidden;">
-      <img src="./web/hero-town.jpg" alt="まちの風景" style="width:100%; height:100%; object-fit:cover; object-position:50% 56%; display:block;">
+      <img src="./hero-town.jpg" alt="まちの風景" style="width:100%; height:100%; object-fit:cover; object-position:50% 56%; display:block;">
       <div style="position:absolute; inset:0; background:linear-gradient(90deg, rgba(247,246,243,.97) 0%, rgba(247,246,243,.86) 28%, rgba(247,246,243,.46) 56%, rgba(247,246,243,.08) 100%);"></div>
       <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(247,246,243,.55) 0%, rgba(247,246,243,0) 24%, rgba(247,246,243,0) 62%, rgba(247,246,243,.94) 100%);"></div>
     </div>
@@ -124,11 +124,11 @@
       <div style="position:relative; align-self:center; padding:14px 0 66px;">
         <!-- window 1 (main) -->
         <div style="position:relative; z-index:3; width:86%; margin-left:auto; border-radius:24px; overflow:hidden; box-shadow:0 26px 56px -22px rgba(31,58,92,.42); border:4px solid #fff; transform:rotate(1.8deg);">
-          <img src="./web/crew.jpg" alt="現場スタッフ" style="width:100%; aspect-ratio:4/3.8; object-fit:cover; object-position:50% 40%; display:block;">
+          <img src="./crew.jpg" alt="現場スタッフ" style="width:100%; aspect-ratio:4/3.8; object-fit:cover; object-position:50% 40%; display:block;">
         </div>
         <!-- window 2 (overlap, bottom-left) -->
         <div style="position:absolute; z-index:5; left:-7%; bottom:-8px; width:47%; border-radius:20px; overflow:hidden; box-shadow:0 22px 44px -18px rgba(31,58,92,.4); border:4px solid #fff; transform:rotate(-4.5deg);">
-          <img src="./web/hero-town.jpg" alt="まちの風景" style="width:100%; aspect-ratio:4/3.5; object-fit:cover; object-position:50% 56%; display:block;">
+          <img src="./hero-town.jpg" alt="まちの風景" style="width:100%; aspect-ratio:4/3.5; object-fit:cover; object-position:50% 56%; display:block;">
         </div>
         <!-- accents -->
         <div style="position:absolute; z-index:6; top:-18px; left:24%; width:80px; height:80px; border:3px dashed #8E72C9; border-radius:50%; opacity:.7; animation:spinSlow 22s linear infinite reverse;"></div>
@@ -322,10 +322,10 @@ class Component extends DCLogic {
         { color: "#3E7CC2", initial: "T", name: "T様", role: "駐車場・カーポート", body: "見積りの説明が分かりやすく、追加費用もなし。職人さんの対応も気持ちよくて、近所にも勧めたくなる工事でした。" },
       ],
       services: [
-        { no: "01", slot: "svc1", img: "./web/crew.jpg", ph: "土木イメージ", title: "土木部", en: "CIVIL ENGINEERING", bg: "#EBE6F7", url: "https://ichirenfudosan.com/company.html", desc: "土地を切り盛りし、宅地や敷地の形を整える。すべての工事の出発点となる、まちづくりの基礎です。" },
-        { no: "02", slot: "svc2", img: "./web/ext-hero.jpg", ph: "外構イメージ", title: "エクステリア事業部", en: "EXTERIOR WORKS", bg: "#FBE4ED", url: "exterior.html", desc: "門・塀・アプローチから植栽まで。建物の“顔”となる外まわりを、機能と美しさの両面で仕上げます。" },
-        { no: "03", slot: "svc3", img: "./web/hero-town.jpg", ph: "不動産イメージ", title: "不動産事業部", en: "REAL ESTATE", bg: "#FBEADC", url: "https://ichirenfudosan.com/pc.html", desc: "土地・建物の売買や活用のご相談に対応。施工で培った知見を活かし、最適な土地活用をご提案します。" },
-        { no: "04", slot: "svc4", img: "./web/hero-town-feather.jpg", ph: "テラスハウスイメージ", title: "テラスハウス事業部", en: "TERRACE HOUSE", bg: "#DEF1EA", url: "https://ichirenfudosan.com/terrace.html", desc: "設計から施工・管理までを一貫対応。暮らしやすさにこだわり、住む人に長く愛されるテラスハウスをつくります。" },
+        { no: "01", slot: "svc1", img: "./crew.jpg", ph: "土木イメージ", title: "土木部", en: "CIVIL ENGINEERING", bg: "#EBE6F7", url: "https://ichirenfudosan.com/company.html", desc: "土地を切り盛りし、宅地や敷地の形を整える。すべての工事の出発点となる、まちづくりの基礎です。" },
+        { no: "02", slot: "svc2", img: "./ext-hero.jpg", ph: "外構イメージ", title: "エクステリア事業部", en: "EXTERIOR WORKS", bg: "#FBE4ED", url: "exterior.html", desc: "門・塀・アプローチから植栽まで。建物の“顔”となる外まわりを、機能と美しさの両面で仕上げます。" },
+        { no: "03", slot: "svc3", img: "./hero-town.jpg", ph: "不動産イメージ", title: "不動産事業部", en: "REAL ESTATE", bg: "#FBEADC", url: "https://ichirenfudosan.com/pc.html", desc: "土地・建物の売買や活用のご相談に対応。施工で培った知見を活かし、最適な土地活用をご提案します。" },
+        { no: "04", slot: "svc4", img: "./hero-town-feather.jpg", ph: "テラスハウスイメージ", title: "テラスハウス事業部", en: "TERRACE HOUSE", bg: "#DEF1EA", url: "https://ichirenfudosan.com/terrace.html", desc: "設計から施工・管理までを一貫対応。暮らしやすさにこだわり、住む人に長く愛されるテラスハウスをつくります。" },
       ],
       strengths: [
         { no: "01", color: "#8E72C9", title: "未経験から、一人前へ", desc: "入社後は先輩がマンツーマンでサポート。工具の名前から重機の操作まで、段階を踏んでしっかり身につけられます。" },

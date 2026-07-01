@@ -56,7 +56,7 @@
   <!-- HERO -->
   <section style="position:relative; overflow:hidden; background:#F5FAFD; min-height:clamp(440px,42vw,640px); display:flex; align-items:center;">
     <div style="position:absolute; top:0; right:0; bottom:0; width:60%; z-index:0;">
-      <img src="./web/ext-hero.jpg" alt="外構の施工" style="width:100%; height:100%; object-fit:cover; object-position:50% 50%; display:block;">
+      <img src="./ext-hero.jpg" alt="外構の施工" style="width:100%; height:100%; object-fit:cover; object-position:50% 50%; display:block;">
     </div>
     <div style="position:absolute; inset:0; z-index:1; background:linear-gradient(90deg,#F5FAFD 0%,#F5FAFD 37%,rgba(245,250,253,.84) 46%,rgba(245,250,253,0) 63%);"></div>
     <div style="position:absolute; inset:0; z-index:1; background:linear-gradient(180deg,rgba(245,250,253,.5) 0%,rgba(245,250,253,0) 22%,rgba(245,250,253,0) 80%,rgba(245,250,253,.4) 100%);"></div>
@@ -128,12 +128,12 @@
 
   <!-- FULL-WIDTH IMAGE -->
   <section style="width:100%; line-height:0;">
-    <img src="./web/ref-strength.jpg" alt="一蓮建設の強み・施工事例" style="display:block; width:100%; height:auto;">
+    <img src="./ref-strength.jpg" alt="一蓮建設の強み・施工事例" style="display:block; width:100%; height:auto;">
   </section>
 
   <!-- FLOW (image) -->
   <section style="width:100%; line-height:0;">
-    <img src="./web/ref-flow.jpg" alt="工事の流れ" style="display:block; width:100%; height:auto;">
+    <img src="./ref-flow.jpg" alt="工事の流れ" style="display:block; width:100%; height:auto;">
   </section>
 
   <!-- SERVICE AREA -->
@@ -191,17 +191,17 @@ class Component extends DCLogic {
   renderVals() {
     return {
       tiles: [
-        { label: "庭の草刈り", slot: "ex1", color: "#5BB85B", icon: "🌱", img: "./web/crew2.jpg" },
-        { label: "芝張り・防草シート", slot: "ex2", color: "#3DA35D", icon: "🌿", img: "./web/hero-town.jpg" },
-        { label: "土間Co打ち", slot: "ex3", color: "#2C8AC9", icon: "🛠️", img: "./web/crew.jpg" },
-        { label: "アスファルト舗装", slot: "ex4", color: "#1F5DA0", icon: "🛣️", img: "./web/hero-town.jpg" },
-        { label: "雨水排水（側溝）工事", slot: "ex5", color: "#2C8AC9", icon: "💧", img: "./web/crew.jpg" },
-        { label: "カーポート", slot: "ex6", color: "#EE6A2C", icon: "🚗", img: "./web/crew2.jpg" },
-        { label: "駐車場整備", slot: "ex7", color: "#7C5BD0", icon: "P", img: "./web/hero-town.jpg" },
-        { label: "ブロック積み", slot: "ex8", color: "#EE9A2C", icon: "🧱", img: "./web/crew.jpg" },
-        { label: "フェンス", slot: "ex9", color: "#3DA35D", icon: "🚧", img: "./web/crew2.jpg" },
-        { label: "外壁掃除", slot: "ex10", color: "#EE6A2C", icon: "🧽", img: "./web/hero-town.jpg" },
-        { label: "震災予防工事（CB積直し・擁壁やり替え等）", slot: "ex12", color: "#3DA35D", icon: "🛡️", gc: "span 2", img: "./web/crew2.jpg" },
+        { label: "庭の草刈り", slot: "ex1", color: "#5BB85B", icon: "🌱", img: "./crew2.jpg" },
+        { label: "芝張り・防草シート", slot: "ex2", color: "#3DA35D", icon: "🌿", img: "./hero-town.jpg" },
+        { label: "土間Co打ち", slot: "ex3", color: "#2C8AC9", icon: "🛠️", img: "./crew.jpg" },
+        { label: "アスファルト舗装", slot: "ex4", color: "#1F5DA0", icon: "🛣️", img: "./hero-town.jpg" },
+        { label: "雨水排水（側溝）工事", slot: "ex5", color: "#2C8AC9", icon: "💧", img: "./crew.jpg" },
+        { label: "カーポート", slot: "ex6", color: "#EE6A2C", icon: "🚗", img: "./crew2.jpg" },
+        { label: "駐車場整備", slot: "ex7", color: "#7C5BD0", icon: "P", img: "./hero-town.jpg" },
+        { label: "ブロック積み", slot: "ex8", color: "#EE9A2C", icon: "🧱", img: "./crew.jpg" },
+        { label: "フェンス", slot: "ex9", color: "#3DA35D", icon: "🚧", img: "./crew2.jpg" },
+        { label: "外壁掃除", slot: "ex10", color: "#EE6A2C", icon: "🧽", img: "./hero-town.jpg" },
+        { label: "震災予防工事（CB積直し・擁壁やり替え等）", slot: "ex12", color: "#3DA35D", icon: "🛡️", gc: "span 2", img: "./crew2.jpg" },
       ],
       reasons: [
         { label: "豊富な実績", color: "#EE9A2C" },
@@ -210,10 +210,10 @@ class Component extends DCLogic {
         { label: "自社施工による高品質", color: "#3DA35D" },
       ],
       cases: [
-        { label: "新築外構一式工事", slot: "case1", img: "./web/crew2.jpg" },
-        { label: "カーポート設置工事", slot: "case2", img: "./web/hero-town.jpg" },
-        { label: "人工芝・造りフォーム", slot: "case3", img: "./web/crew.jpg" },
-        { label: "ブロック塀・フェンス工事", slot: "case4", img: "./web/crew2.jpg" },
+        { label: "新築外構一式工事", slot: "case1", img: "./crew2.jpg" },
+        { label: "カーポート設置工事", slot: "case2", img: "./hero-town.jpg" },
+        { label: "人工芝・造りフォーム", slot: "case3", img: "./crew.jpg" },
+        { label: "ブロック塀・フェンス工事", slot: "case4", img: "./crew2.jpg" },
       ],
       steps: [
         { no: "01", title: "お問い合わせ", desc: "お電話・メールにてお気軽にご相談ください。" },
