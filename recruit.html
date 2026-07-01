@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>採用情報｜一蓮建設株式会社</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16181d;
+    --ink-soft:#23262e;
+    --concrete:#e7e4dd;
+    --paper:#f5f3ee;
+    --grey:#5f5a53;
+    --line:#cfcabf;
+    --orange:#df5125;
+    --amber:#e5a019;
+    --blue:#2f74b8;
+    --lime:#8ec63f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:"Noto Sans JP",sans-serif;background:var(--concrete);color:var(--ink);
+    line-height:1.85;overflow-x:hidden}
+  .wrap{max-width:760px;margin:0 auto;background:var(--concrete);position:relative}
+  .display{font-family:"Zen Kaku Gothic New",sans-serif}
+
+  .spectrum{height:6px;display:flex}
+  .spectrum i{flex:1}
+  .spectrum i:nth-child(1){background:var(--orange)}
+  .spectrum i:nth-child(2){background:var(--amber)}
+  .spectrum i:nth-child(3){background:var(--blue)}
+
+  /* HERO */
+  .hero{background:var(--ink);color:var(--paper);padding:54px 40px 48px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-70px;top:-70px;width:280px;height:280px;
+    border:14px solid rgba(255,255,255,.06);border-radius:50%}
+  @media(max-width:620px){.hero{padding:48px 24px 44px}}
+  .brand{display:flex;align-items:center;gap:12px;font-size:13px;letter-spacing:.18em;color:#b9b3a7;position:relative;z-index:1}
+  .brand b{color:var(--paper);font-weight:700;font-family:"Zen Kaku Gothic New"}
+  .eyebrow{margin-top:28px;display:inline-block;font-family:"Space Mono";font-size:12px;letter-spacing:.22em;
+    color:var(--ink);background:var(--paper);padding:6px 14px;font-weight:700;position:relative;z-index:1}
+  .hero h1{font-family:"Zen Kaku Gothic New";font-weight:900;font-size:clamp(27px,6.2vw,44px);
+    line-height:1.34;margin-top:22px;position:relative;z-index:1}
+  .hero h1 .o{color:var(--orange)}.hero h1 .a{color:var(--amber)}.hero h1 .b{color:var(--blue)}
+  .hero .lead{margin-top:20px;font-size:15px;color:#d3cdc1;max-width:56ch;position:relative;z-index:1}
+  .hero .lead b{color:var(--paper);font-weight:700}
+  .stats{display:flex;flex-wrap:wrap;gap:12px 30px;margin-top:30px;padding-top:24px;
+    border-top:1px solid #3a3d45;position:relative;z-index:1}
+  .stats .s{display:flex;flex-direction:column}
+  .stats .s .k{font-size:10.5px;letter-spacing:.14em;color:#9a958b}
+  .stats .s .v{font-family:"Space Mono";font-weight:700;font-size:18px;color:var(--paper);margin-top:2px}
+
+  /* SECTION LABEL */
+  .listhead{padding:42px 40px 6px;display:flex;align-items:baseline;gap:14px}
+  @media(max-width:620px){.listhead{padding:38px 24px 6px}}
+  .listhead .idx{font-family:"Space Mono";font-size:13px;color:var(--grey);font-weight:700}
+  .listhead h2{font-family:"Zen Kaku Gothic New";font-weight:900;font-size:clamp(19px,4.4vw,25px)}
+
+  /* CARDS */
+  .cards{padding:22px 40px 8px;display:grid;gap:40px}
+  @media(max-width:620px){.cards{padding:22px 24px 8px}}
+  .card{display:block;text-decoration:none;color:inherit;background:var(--paper);
+    border:1px solid var(--line);border-radius:5px;overflow:hidden;position:relative;
+    transition:transform .18s ease,box-shadow .18s ease;box-shadow:0 1px 0 rgba(0,0,0,.03)}
+  .card:hover{transform:translateY(-4px);box-shadow:0 14px 30px -16px rgba(20,22,28,.5)}
+  .card:focus-visible{outline:3px solid var(--c);outline-offset:3px}
+  .card .bar{height:7px;background:var(--c)}
+  .card .body{padding:26px 26px 24px}
+  @media(max-width:620px){.card .body{padding:22px 20px 22px}}
+
+  .card .crow{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+  .card .no{font-family:"Space Mono";font-weight:700;font-size:clamp(30px,7vw,42px);
+    color:var(--c);line-height:1}
+  .card .cat{font-family:"Zen Kaku Gothic New";font-weight:700;font-size:12.5px;letter-spacing:.06em;
+    color:#fff;background:var(--c);padding:4px 12px;border-radius:2px}
+  .card .cat.dark{color:var(--ink)}
+  .card .arrow{margin-left:auto;font-family:"Space Mono";font-weight:700;font-size:20px;color:var(--c)}
+
+  .card h3{font-family:"Zen Kaku Gothic New";font-weight:900;font-size:clamp(20px,4.8vw,26px);
+    line-height:1.32;letter-spacing:.01em}
+  .card .hook{margin-top:10px;font-family:"Zen Kaku Gothic New";font-weight:700;font-size:15px;
+    line-height:1.55;color:#2a2d34}
+  .card .hook .em{color:var(--cd)}
+
+  .card .meta{display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-top:20px;
+    padding-top:18px;border-top:1px dashed var(--line)}
+  .card .pay{display:flex;flex-direction:column}
+  .card .pay .pk{font-size:11.5px;letter-spacing:.12em;color:var(--grey);font-weight:700;margin-bottom:3px}
+  .card .pay .pv{font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;font-weight:900;font-size:clamp(28px,6.5vw,40px);
+    color:var(--cd);line-height:1.1;letter-spacing:.01em}
+  .card .pay .pv .u{font-family:"Noto Sans JP";font-size:16px;color:var(--grey);font-weight:700}
+
+  .card .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+  .card .chip{font-size:12px;border:1px solid var(--line);color:#3a3d34;
+    padding:4px 10px;border-radius:20px;background:#fff}
+  .card .chip.key{border-color:var(--c);color:var(--cd);font-weight:500}
+
+  .card .go{margin-top:20px;background:var(--c);color:var(--on);font-family:"Zen Kaku Gothic New";
+    font-weight:700;font-size:15px;text-align:center;padding:14px;border-radius:3px;letter-spacing:.03em}
+
+  /* note */
+  .foot-note{padding:18px 40px 6px;font-size:12px;color:var(--grey)}
+  @media(max-width:620px){.foot-note{padding:18px 24px 6px}}
+
+  /* REQUIREMENTS */
+  .reqwrap{padding:22px 40px 8px}
+  @media(max-width:620px){.reqwrap{padding:22px 24px 8px}}
+  .reqcard{background:var(--paper);border:1px solid var(--line);border-radius:5px;overflow:hidden;
+    box-shadow:0 1px 0 rgba(0,0,0,.03)}
+  .reqcard image-slot{background:#fff}
+  .reqnote{margin-top:12px;font-size:12px;color:var(--grey)}
+
+  /* BACK */
+  .backwrap{padding:34px 40px 44px;display:flex;justify-content:center}
+  @media(max-width:620px){.backwrap{padding:28px 24px 36px}}
+  .backbtn{display:inline-flex;align-items:center;gap:9px;font-family:"Zen Kaku Gothic New",sans-serif;
+    font-weight:700;font-size:15px;color:var(--ink);text-decoration:none;
+    padding:15px 34px;border:1.5px solid var(--ink);border-radius:999px;background:var(--paper);
+    transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+  .backbtn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -12px rgba(0,0,0,.5);background:#fff}
+
+  footer{background:var(--ink);color:#8a857b;text-align:center;padding:30px 20px;font-size:12px;
+    letter-spacing:.04em;margin-top:24px}
+  footer b{color:var(--paper);font-family:"Zen Kaku Gothic New";font-weight:700}
+  footer .f-spectrum{height:4px;display:flex;margin-bottom:18px}
+  footer .f-spectrum i{flex:1}
+  footer .f-spectrum i:nth-child(1){background:var(--orange)}
+  footer .f-spectrum i:nth-child(2){background:var(--amber)}
+  footer .f-spectrum i:nth-child(3){background:var(--blue)}
+
+  .rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+  .rv.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#f5f3ee"/><circle cx="50" cy="42" r="20" fill="#2f74b8"/><text x="50" y="50" font-size="20" font-family="sans-serif" font-weight="800" fill="#fff" text-anchor="middle">求</text><text x="50" y="82" font-size="12" font-family="sans-serif" font-weight="700" fill="#16181d" text-anchor="middle">採用情報</text></svg></template>
+<div class="wrap">
+  <div class="spectrum" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="brand"><b>一蓮建設株式会社</b><span>｜神奈川県厚木市</span></div>
+    <span class="eyebrow">RECRUIT ／ 採用情報</span>
+    <h1>腕と経験を、<br><span class="o">正</span><span class="a">当</span>に<span class="b">評価</span>する現場へ。</h1>
+    <p class="lead">一蓮建設では現在、<b>3つの職種</b>で仲間を募集しています。宅地造成・外構をメインに、神奈川県内で安定して案件が回る会社です。設立（平成25年）から右肩上がり、R6年度売上 6億3,270万円。</p>
+    <div class="stats">
+    </div>
+  </header>
+
+  <div class="listhead"><span class="idx">03 POSITIONS</span><h2>募集中の職種</h2></div>
+
+  <div class="cards">
+
+    <!-- 外構職人 -->
+    <a class="card rv" href="mailto:office.ichiren@gmail.com?subject=外構職人（土木・外構）の求人について" style="--c:#df5125;--cd:#bb3d15;--on:#fff">
+      <div class="bar"></div>
+      <div class="body">
+        <div class="crow"><span class="no">01</span><span class="cat">外構・エクステリア</span><span class="arrow">→</span></div>
+        <h3>職人（土木・外構）<br>（ブロック・フェンス・土間コン）</h3>
+        <p class="hook">一人親方の「腕」に、<span class="em">安定収入と社会保険</span>を。</p>
+        <div class="meta">
+          <div class="pay"><span class="pk">DAILY ／ 日給</span>
+            <span class="pv">18,000–25,000<span class="u">円</span></span></div>
+        </div>
+        <div class="chips">
+          <span class="chip key">一人親方歓迎</span>
+          <span class="chip">40代以降歓迎</span>
+          <span class="chip">社会保険・退職金</span>
+          <span class="chip">県内9割・転勤なし</span>
+        </div>
+        <div class="go">この求人を見る →</div>
+      </div>
+    </a>
+
+    <!-- 土工 -->
+    <a class="card rv" href="mailto:office.ichiren@gmail.com?subject=土木作業員（手元・雑工）の求人について" style="--c:#e5a019;--cd:#9a6a0f;--on:#1a1205">
+      <div class="bar"></div>
+      <div class="body">
+        <div class="crow"><span class="no">02</span><span class="cat dark">宅地造成・土木</span><span class="arrow">→</span></div>
+        <h3>土木作業員<br>（手元・雑工）</h3>
+        <p class="hook">監督業より、<span class="em">現場メインで稼ぎたい</span>職人へ。</p>
+        <div class="meta">
+          <div class="pay"><span class="pk">DAILY ／ 日当</span>
+            <span class="pv">13,000–15,000<span class="u">円</span></span></div>
+        </div>
+        <div class="chips">
+          <span class="chip key">経験者優遇</span>
+          <span class="chip">重機オペ・職長17,000〜</span>
+          <span class="chip">20〜70代活躍</span>
+          <span class="chip">県内のみ・転勤なし</span>
+        </div>
+        <div class="go">この求人を見る →</div>
+      </div>
+    </a>
+
+    <!-- 施工管理 -->
+    <a class="card rv" href="mailto:office.ichiren@gmail.com?subject=施工管理の求人について" style="--c:#2f74b8;--cd:#235a90;--on:#fff">
+      <div class="bar" style="background:linear-gradient(90deg,var(--blue),#22b2cc,var(--lime))"></div>
+      <div class="body">
+        <div class="crow"><span class="no">03</span><span class="cat">施工管理・現場監督</span><span class="arrow">→</span></div>
+        <h3>土木施工管理／現場監督</h3>
+        <p class="hook">仕事の中身は好き。<span class="em">環境だけを、変えたい。</span></p>
+        <div class="meta">
+          <div class="pay"><span class="pk">ANNUAL ／ 年収モデル</span>
+            <span class="pv">600–900<span class="u">万円</span></span></div>
+        </div>
+        <div class="chips">
+          <span class="chip key">20〜30代歓迎</span>
+          <span class="chip">自分のペースで段取り</span>
+          <span class="chip">ブランクOK</span>
+          <span class="chip">売上6.3億（R6）</span>
+        </div>
+        <div class="go">この求人を見る →</div>
+      </div>
+    </a>
+
+  </div>
+
+  <p class="foot-note">※ いずれも神奈川県厚木市拠点・転勤なし。気になる職種があれば、まずは話を聞きに来てください。</p>
+
+  <div class="backwrap rv">
+    <a href="index.html" class="backbtn">← トップページに戻る</a>
+  </div>
+
+  <footer>
+    <div class="f-spectrum" aria-hidden="true"><i></i><i></i><i></i></div>
+    <b>一蓮建設株式会社</b>　宅地造成・外構工事｜神奈川県厚木市｜設立 平成25年
+  </footer>
+</div>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

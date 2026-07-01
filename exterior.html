@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#FBE4ED"/><circle cx="50" cy="42" r="20" fill="#df5125"/><text x="50" y="50" font-size="20" font-family="sans-serif" font-weight="800" fill="#fff" text-anchor="middle">外</text><text x="50" y="82" font-size="11" font-family="sans-serif" font-weight="700" fill="#1F3A5C" text-anchor="middle">エクステリア</text></svg></template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; }
+  image-slot { display: block; }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .q-plus { transform: rotate(45deg); }
+  .tile:hover { transform: translateY(-5px); box-shadow: 0 18px 36px -16px rgba(31,58,92,.3); }
+  .tile { transition: transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s; }
+  .case:hover img { transform: scale(1.05); }
+</style>
+</helmet>
+
+<div style="font-family:'Zen Kaku Gothic New',sans-serif; background:#FFFFFF; color:#1F3A5C; min-height:100vh; overflow-x:hidden;">
+
+  <!-- HEADER -->
+  <header style="position:sticky; top:0; z-index:100; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:22px clamp(20px,3.5vw,52px); background:linear-gradient(120deg,#1C4E8F 0%,#1E7FA8 36%,#1E9E8E 68%,#3E9A52 100%); border-bottom:1px solid rgba(255,255,255,.18);">
+    <div style="display:flex; align-items:center; gap:16px;">
+      <img src="./logo-mark.png" alt="一蓮建設" style="height:76px; width:auto; display:block; filter:brightness(0) invert(1);">
+      <div style="line-height:1.12; text-align:center;">
+        <div style="font-weight:900; font-size:25px; color:#ffffff;">一蓮建設株式会社</div>
+        <div style="font-size:13px; letter-spacing:.14em; color:rgba(255,255,255,.72);">外構工事・エクステリア</div>
+      </div>
+    </div>
+    <nav style="display:flex; align-items:center; gap:clamp(10px,1.6vw,22px); font-size:13px; font-weight:700;">
+      <a href="#services" style="color:#ffffff; text-decoration:none;">サービス</a>
+      <a href="#cases" style="color:#ffffff; text-decoration:none;">施工事例</a>
+      <a href="#reasons" style="color:#ffffff; text-decoration:none;">選ばれる理由</a>
+      <a href="#flow" style="color:#ffffff; text-decoration:none;">工事の流れ</a>
+      <a href="#faq" style="color:#ffffff; text-decoration:none;">よくある質問</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:16px;">
+      <div style="text-align:right; line-height:1.15;">
+        <div style="display:flex; align-items:center; gap:7px; font-family:'Space Mono',monospace; font-weight:700; font-size:23px; color:#ffffff;"><span style="font-size:16px;">☎</span>046-240-0861</div>
+        <div style="font-size:10px; color:rgba(255,255,255,.72);">受付時間 8:30〜18:00 / 日曜定休</div>
+      </div>
+      <a href="#contact" style="display:inline-flex; align-items:center; gap:8px; background:#EE6A2C; color:#fff; font-weight:700; font-size:13px; padding:12px 18px; border-radius:8px; text-decoration:none; box-shadow:0 8px 18px -8px rgba(238,106,44,.6);">✉ 無料相談・お見積り <span style="background:rgba(255,255,255,.25); border-radius:50%; width:18px; height:18px; display:inline-flex; align-items:center; justify-content:center;">›</span></a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="position:relative; overflow:hidden; background:#F5FAFD; min-height:clamp(440px,42vw,640px); display:flex; align-items:center;">
+    <div style="position:absolute; top:0; right:0; bottom:0; width:60%; z-index:0;">
+      <img src="./web/ext-hero.jpg" alt="外構の施工" style="width:100%; height:100%; object-fit:cover; object-position:50% 50%; display:block;">
+    </div>
+    <div style="position:absolute; inset:0; z-index:1; background:linear-gradient(90deg,#F5FAFD 0%,#F5FAFD 37%,rgba(245,250,253,.84) 46%,rgba(245,250,253,0) 63%);"></div>
+    <div style="position:absolute; inset:0; z-index:1; background:linear-gradient(180deg,rgba(245,250,253,.5) 0%,rgba(245,250,253,0) 22%,rgba(245,250,253,0) 80%,rgba(245,250,253,.4) 100%);"></div>
+    <!-- decorative -->
+    <div style="position:absolute; z-index:2; left:43%; top:26%; width:62px; height:62px; border-radius:50%; background:#BFE0F5; opacity:.65;"></div>
+    <div style="position:absolute; z-index:2; left:37%; top:60%; width:96px; height:96px; border-radius:50%; background:#F7E2A8; opacity:.6;"></div>
+    <div style="position:absolute; z-index:2; left:46%; top:70%; width:42px; height:42px; border-radius:50%; background:transparent; border:2px dotted #9FD0F0; opacity:.8;"></div>
+    <div style="position:absolute; z-index:2; left:1.5%; top:16%; width:26px; height:26px; background:#8FCB6B; border-radius:0 50% 0 50%; transform:rotate(22deg); opacity:.8;"></div>
+    <div style="position:absolute; z-index:2; left:3.5%; bottom:13%; width:22px; height:22px; background:#B6DDA0; border-radius:0 50% 0 50%; transform:rotate(-28deg); opacity:.8;"></div>
+    <!-- content -->
+    <div style="position:relative; z-index:3; max-width:1200px; margin:0 auto; width:100%; padding:clamp(32px,5vw,60px) clamp(18px,4vw,56px);">
+      <div style="max-width:min(800px,62%);">
+        <h1 style="font-family:'Shippori Mincho B1',serif; font-weight:800; font-size:clamp(34px,5.4vw,68px); line-height:1.4; margin:0 0 22px; letter-spacing:.02em; color:#1C2A3A;">
+          <span style="display:block; white-space:nowrap;">見た目も、性能も、</span>
+          <span style="display:block; white-space:nowrap;">長く<span style="color:#3DA35D;">安心</span>できる<span style="color:#1F5DA0;">外構</span>へ。</span>
+        </h1>
+        <p style="font-size:clamp(16px,1.9vw,21px); line-height:1.9; color:#1F3A5C; font-weight:500; margin:0 0 30px;">
+          土木のプロだからできる、<br>
+          高くて美しい外構づくり。<br>
+          暮らしやすさと安全性を両立した<br>
+          プランをご提案します。
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:14px;">
+          <a href="#contact" style="display:inline-flex; align-items:center; gap:10px; background:#EE6A2C; color:#fff; font-weight:700; font-size:16px; padding:17px 30px; border-radius:999px; text-decoration:none; box-shadow:0 12px 26px -10px rgba(238,106,44,.6);">✉ 無料相談・お見積り <span style="background:rgba(255,255,255,.25); border-radius:50%; width:22px; height:22px; display:inline-flex; align-items:center; justify-content:center;">›</span></a>
+          <a href="#cases" style="display:inline-flex; align-items:center; gap:10px; background:#fff; color:#1F5DA0; font-weight:700; font-size:16px; padding:17px 30px; border-radius:999px; text-decoration:none; border:1.5px solid rgba(31,93,160,.5); box-shadow:0 10px 24px -14px rgba(31,93,160,.5);">🎖 施工事例を見る <span>›</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRENGTH BADGES -->
+  <section style="background:#fff; padding:clamp(30px,4vw,54px) clamp(18px,4vw,56px) 0;">
+    <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(12px,1.6vw,20px);">
+      <div style="display:flex; align-items:center; gap:16px; border:2px solid #3DA35D; border-radius:14px; padding:18px 22px; background:#fff;">
+        <div style="width:52px; height:52px; border-radius:50%; background:#EAF6EC; color:#3DA35D; display:flex; align-items:center; justify-content:center; font-size:24px; font-weight:800; flex-shrink:0;">¥</div>
+        <div><div style="font-size:12px; color:#5A6573; font-weight:700;">現地調査・お見積り</div><div style="font-size:26px; font-weight:900; color:#3DA35D; line-height:1.1;">無料</div></div>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px; border:2px solid #2CB7A8; border-radius:14px; padding:18px 22px; background:#fff;">
+        <div style="width:52px; height:52px; border-radius:50%; background:#E4F6F3; color:#2CB7A8; display:flex; align-items:center; justify-content:center; font-size:24px; flex-shrink:0;">⚡</div>
+        <div><div style="font-size:12px; color:#5A6573; font-weight:700;">スピーディー対応</div><div style="font-size:23px; font-weight:900; color:#2CB7A8; line-height:1.1;">迅速対応</div></div>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px; border:2px solid #1F5DA0; border-radius:14px; padding:18px 22px; background:#fff;">
+        <div style="width:52px; height:52px; border-radius:50%; background:#E7F0FA; color:#1F5DA0; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0;">🎖</div>
+        <div><div style="font-size:12px; color:#5A6573; font-weight:700;">確かな品質で</div><div style="font-size:23px; font-weight:900; color:#1F5DA0; line-height:1.1;">高品質</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" style="padding:clamp(48px,6vw,90px) clamp(18px,4vw,56px); background:#fff;">
+    <div style="max-width:1200px; margin:0 auto;">
+      <h2 style="text-align:center; font-family:'Shippori Mincho B1',serif; font-weight:800; font-size:clamp(28px,3.7vw,44px); margin:0 0 clamp(28px,4vw,48px); letter-spacing:.04em;"><span style="display:inline-block; width:16px; height:16px; background:#8FCB6B; border-radius:0 50% 0 50%; transform:rotate(25deg); vertical-align:middle; margin-right:16px;"></span>ご依頼が多い<span style="color:#1F5DA0;">外構工事</span><span style="display:inline-block; width:16px; height:16px; background:#8FCB6B; border-radius:50% 0 50% 0; transform:rotate(-25deg); vertical-align:middle; margin-left:16px;"></span></h2>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(12px,1.5vw,20px);">
+        <sc-for list="{{ tiles }}" as="t" hint-placeholder-count="12">
+          <div class="tile" style="background:#fff; border:1px solid rgba(31,58,92,.12); border-radius:16px; overflow:hidden; cursor:pointer; grid-column:{{ t.gc }};">
+            <div style="position:relative;">
+              <div style="width:100%; height:128px; position:relative; background:{{ t.color }};"><div style="position:absolute; inset:0; background:rgba(255,255,255,.72);"></div></div>
+              <div style="position:absolute; top:10px; left:10px; width:44px; height:44px; border-radius:50%; background:{{ t.color }}; box-shadow:0 4px 10px -4px rgba(0,0,0,.4); display:flex; align-items:center; justify-content:center;"><span style="font-size:21px; line-height:1; font-weight:800; filter:brightness(0) invert(1);">{{ t.icon }}</span></div>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; padding:14px 16px;">
+              <span style="font-weight:700; font-size:18px;">{{ t.label }}</span>
+              <span style="color:#1F5DA0; font-weight:700;">›</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL-WIDTH IMAGE -->
+  <section style="width:100%; line-height:0;">
+    <img src="./web/ref-strength.jpg" alt="一蓮建設の強み・施工事例" style="display:block; width:100%; height:auto;">
+  </section>
+
+  <!-- FLOW (image) -->
+  <section style="width:100%; line-height:0;">
+    <img src="./web/ref-flow.jpg" alt="工事の流れ" style="display:block; width:100%; height:auto;">
+  </section>
+
+  <!-- SERVICE AREA -->
+
+  <!-- CONTACT BAND -->
+  <section id="contact" style="padding:clamp(18px,3vw,40px) clamp(18px,4vw,56px) clamp(40px,5vw,64px);">
+    <div style="max-width:1200px; margin:0 auto; background:linear-gradient(120deg,#1F5DA0,#2C8AC9); color:#fff; border-radius:22px; padding:clamp(32px,4vw,52px); display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:28px; box-shadow:0 24px 50px -24px rgba(31,93,160,.6);">
+      <div>
+        <div style="font-weight:700; font-size:clamp(15px,1.6vw,19px); margin-bottom:10px;">外構工事のことなら一蓮建設にお任せください！</div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width:50px; height:50px; border-radius:50%; background:#fff; color:#1F5DA0; display:flex; align-items:center; justify-content:center; font-size:24px;">☎</div>
+          <div>
+            <div style="font-family:'Space Mono',monospace; font-weight:700; font-size:clamp(26px,3.4vw,40px); line-height:1;">046-240-0861</div>
+            <div style="font-size:12px; opacity:.9; margin-top:4px;">受付時間 8:30〜18:00 / 日曜定休</div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:14px;">
+        <a href="#" style="display:inline-flex; align-items:center; gap:10px; background:#EE6A2C; color:#fff; font-weight:700; font-size:16px; padding:18px 30px; border-radius:10px; text-decoration:none;">✉ 無料相談・お見積り <span>›</span></a>
+        <a href="#" style="display:inline-flex; align-items:center; gap:10px; background:#fff; color:#1F5DA0; font-weight:700; font-size:16px; padding:18px 30px; border-radius:10px; text-decoration:none;">お問い合わせフォーム <span>›</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#1F3A5C; color:#fff; padding:clamp(36px,4vw,56px) clamp(18px,4vw,56px);">
+    <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; gap:30px; justify-content:space-between;">
+      <div style="display:flex; align-items:flex-start; gap:14px;">
+        <img src="./logo-mark.png" alt="一蓮建設" style="height:52px; width:auto; filter:brightness(0) invert(1); opacity:.92;">
+        <div style="line-height:1.5;">
+          <div style="font-weight:900; font-size:17px;">一蓮建設株式会社</div>
+          <div style="font-size:11px; opacity:.7; letter-spacing:.12em;">外構工事・エクステリア</div>
+          <div style="font-size:12px; opacity:.8; margin-top:10px;">〒000-0000 神奈川県●●市●●1-1<br>TEL：046-240-0861</div>
+        </div>
+      </div>
+      <div style="display:flex; gap:clamp(28px,4vw,64px); font-size:13px;">
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <a href="#services" style="color:#fff; opacity:.85; text-decoration:none;">サービス</a>
+          <a href="#cases" style="color:#fff; opacity:.85; text-decoration:none;">施工事例</a>
+          <a href="#reasons" style="color:#fff; opacity:.85; text-decoration:none;">選ばれる理由</a>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <a href="#flow" style="color:#fff; opacity:.85; text-decoration:none;">工事の流れ</a>
+          <a href="#faq" style="color:#fff; opacity:.85; text-decoration:none;">よくある質問</a>
+          <a href="index.html" style="color:#fff; opacity:.85; text-decoration:none;">会社概要</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1200px; margin:26px auto 0; padding-top:18px; border-top:1px solid rgba(255,255,255,.16); font-size:11px; opacity:.6;">© 2026 一蓮建設株式会社 All Rights Reserved.</div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      tiles: [
+        { label: "庭の草刈り", slot: "ex1", color: "#5BB85B", icon: "🌱", img: "./web/crew2.jpg" },
+        { label: "芝張り・防草シート", slot: "ex2", color: "#3DA35D", icon: "🌿", img: "./web/hero-town.jpg" },
+        { label: "土間Co打ち", slot: "ex3", color: "#2C8AC9", icon: "🛠️", img: "./web/crew.jpg" },
+        { label: "アスファルト舗装", slot: "ex4", color: "#1F5DA0", icon: "🛣️", img: "./web/hero-town.jpg" },
+        { label: "雨水排水（側溝）工事", slot: "ex5", color: "#2C8AC9", icon: "💧", img: "./web/crew.jpg" },
+        { label: "カーポート", slot: "ex6", color: "#EE6A2C", icon: "🚗", img: "./web/crew2.jpg" },
+        { label: "駐車場整備", slot: "ex7", color: "#7C5BD0", icon: "P", img: "./web/hero-town.jpg" },
+        { label: "ブロック積み", slot: "ex8", color: "#EE9A2C", icon: "🧱", img: "./web/crew.jpg" },
+        { label: "フェンス", slot: "ex9", color: "#3DA35D", icon: "🚧", img: "./web/crew2.jpg" },
+        { label: "外壁掃除", slot: "ex10", color: "#EE6A2C", icon: "🧽", img: "./web/hero-town.jpg" },
+        { label: "震災予防工事（CB積直し・擁壁やり替え等）", slot: "ex12", color: "#3DA35D", icon: "🛡️", gc: "span 2", img: "./web/crew2.jpg" },
+      ],
+      reasons: [
+        { label: "豊富な実績", color: "#EE9A2C" },
+        { label: "高い技術力と安全性", color: "#2C8AC9" },
+        { label: "確かな品質と耐久設計", color: "#7C5BD0" },
+        { label: "自社施工による高品質", color: "#3DA35D" },
+      ],
+      cases: [
+        { label: "新築外構一式工事", slot: "case1", img: "./web/crew2.jpg" },
+        { label: "カーポート設置工事", slot: "case2", img: "./web/hero-town.jpg" },
+        { label: "人工芝・造りフォーム", slot: "case3", img: "./web/crew.jpg" },
+        { label: "ブロック塀・フェンス工事", slot: "case4", img: "./web/crew2.jpg" },
+      ],
+      steps: [
+        { no: "01", title: "お問い合わせ", desc: "お電話・メールにてお気軽にご相談ください。" },
+        { no: "02", title: "現地調査・ヒアリング", desc: "現地を確認し、ご要望やお悩みをお伺いします。" },
+        { no: "03", title: "お見積り・プラン提案", desc: "ご要望に合わせた最適なプランとお見積りをご提案。" },
+        { no: "04", title: "ご契約・施工", desc: "ご契約後、丁寧・確実に施工を進めます。" },
+        { no: "05", title: "完成・お引き渡し", desc: "最終確認後、お引き渡しいたします。" },
+      ],
+      faqs: [
+        { q: "見積りは無料ですか？", a: "はい、現地調査・お見積りは無料です。お気軽にご依頼ください。" },
+        { q: "小さな工事でも依頼できますか？", a: "もちろんです。草刈りや小規模な補修から大規模工事まで対応します。" },
+        { q: "工事の期間はどのくらいかかりますか？", a: "内容により異なりますが、現地調査時に目安の工期をお伝えします。" },
+        { q: "アフターサービスはありますか？", a: "施工後の点検・メンテナンスにも対応。長く安心してお使いいただけます。" },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
