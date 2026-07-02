@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Dela+Gothic+One&family=Shippori+Mincho+B1:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
 <style>
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -38,6 +39,26 @@
   .svc-card:hover .svc-arrow { transform: translate(4px,-4px); }
   .svc-card:hover { transform: translateY(-6px); }
   .voices-track::-webkit-scrollbar { display: none; width: 0; height: 0; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  @media (max-width: 900px) {
+    .lp-hero-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+    .lp-svc-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .lp-str-grid { grid-template-columns: 1fr !important; }
+    .lp-line-grid { grid-template-columns: 1fr !important; }
+    .lp-watermark { display: none !important; }
+  }
+  @media (max-width: 640px) {
+    .lp-svc-grid { grid-template-columns: 1fr !important; }
+    .lp-navlink { display: none !important; }
+    .lp-h1 span { white-space: normal !important; }
+    .lp-str-title { white-space: normal !important; }
+    .lp-line-title { white-space: normal !important; }
+    .lp-cta-btn { min-width: 0 !important; width: 100% !important; font-size: 17px !important; padding: 17px 20px !important; }
+    .lp-voice-card { flex: 0 0 86vw !important; }
+    .lp-ba-grid { grid-template-columns: 1fr !important; }
+    .lp-ba-arrow { transform: rotate(90deg); margin: 2px 0; }
+  }
 </style>
 </helmet>
 
@@ -55,10 +76,13 @@
         <div style="font-family:'Space Mono',monospace; font-size:9px; letter-spacing:.22em; color:#9098A6;">ICHIREN&nbsp;CORPORATION</div>
       </div>
     </div>
-    <div style="display:flex; align-items:center; gap:clamp(14px,2.4vw,34px); font-size:13px; font-weight:500;">
-      <a href="#service" style="color:#1F3A5C; text-decoration:none;">サービス</a>
-      <a href="#strength" style="color:#1F3A5C; text-decoration:none;">働く魅力</a>
-      <a href="recruit.html" style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#7E5FBE,#ED88B0); color:#fff; padding:11px 20px; border-radius:999px; text-decoration:none; font-weight:700;">
+    <div class="lp-navlinks" style="display:flex; align-items:center; gap:clamp(14px,2.4vw,30px); font-size:16px; font-weight:600;">
+      <a href="#service" class="lp-navlink" style="color:#1F3A5C; text-decoration:none;">サービス</a>
+      <a href="#strength" class="lp-navlink" style="color:#1F3A5C; text-decoration:none;">働く魅力</a>
+      <a href="#voices" class="lp-navlink" style="color:#1F3A5C; text-decoration:none;">代表挨拶</a>
+      <a href="access.html" class="lp-navlink" style="color:#1F3A5C; text-decoration:none;">所在地</a>
+      <a href="privacy.html" class="lp-navlink" style="color:#1F3A5C; text-decoration:none;">プライバシーポリシー</a>
+      <a href="recruit.html" style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#7E5FBE,#ED88B0); color:#fff; padding:12px 22px; border-radius:999px; text-decoration:none; font-weight:700; font-size:15px;">
         採用エントリー <span>↗</span>
       </a>
     </div>
@@ -68,7 +92,7 @@
   <header style="position:relative; padding:clamp(40px,7vw,96px) clamp(20px,5vw,72px) clamp(60px,8vw,110px); max-width:1320px; margin:0 auto;">
     <!-- full-bleed hero photo -->
     <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:100vw; height:100%; z-index:0; overflow:hidden;">
-      <img src="./hero-town.jpg" alt="まちの風景" style="width:100%; height:100%; object-fit:cover; object-position:50% 56%; display:block;">
+      <image-slot id="heroBg" src="./hero-town.png" placeholder="まちの写真をドロップ" fit="cover" position="50% 56%" style="width:100%; height:100%;"></image-slot>
       <div style="position:absolute; inset:0; background:linear-gradient(90deg, rgba(247,246,243,.97) 0%, rgba(247,246,243,.86) 28%, rgba(247,246,243,.46) 56%, rgba(247,246,243,.08) 100%);"></div>
       <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(247,246,243,.55) 0%, rgba(247,246,243,0) 24%, rgba(247,246,243,0) 62%, rgba(247,246,243,.94) 100%);"></div>
     </div>
@@ -83,9 +107,9 @@
     <div style="position:absolute; z-index:4; top:13%; right:5%; width:104px; height:104px; border:3px dashed #ED88B0; border-radius:50%; opacity:.6; animation:spinSlow 20s linear infinite;"></div>
     <div style="position:absolute; z-index:4; top:8%; right:30%; width:22px; height:22px; background:#8E72C9; border-radius:50%; animation:twinkle 3.6s ease-in-out infinite;"></div>
 
-    <div style="position:relative; z-index:2; display:grid; grid-template-columns:1fr 1.06fr; gap:clamp(24px,4vw,56px); align-items:center;">
+    <div class="lp-hero-grid" style="position:relative; z-index:2; display:grid; grid-template-columns:1fr 1.06fr; gap:clamp(24px,4vw,56px); align-items:center;">
       <div>
-        <h1 style="font-family:'Shippori Mincho B1',serif; font-weight:800; font-size:clamp(30px,4.4vw,58px); line-height:1.4; letter-spacing:.01em; margin:0 0 22px;">
+        <h1 class="lp-h1" style="font-family:'Shippori Mincho B1',serif; font-weight:800; font-size:clamp(30px,4.4vw,58px); line-height:1.4; letter-spacing:.01em; margin:0 0 22px;">
           <span style="display:block; white-space:nowrap;">町の足元を支える仕事で、</span>
           <span style="display:block; white-space:nowrap;">地域に必要とされる会社へ。</span>
         </h1>
@@ -160,19 +184,22 @@
       </div>
     </div>
 
-    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px;">
+    <div class="lp-svc-grid" style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px;">
       <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
         <div class="svc-card reveal" data-reveal style="background:{{ s.bg }}; border:1.5px solid #1F3A5C; border-radius:28px; padding:32px 30px 36px; display:flex; flex-direction:column; min-height:480px; position:relative; transition:transform .4s cubic-bezier(.16,1,.3,1);">
           <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:18px;">
             <div style="font-family:'Space Mono',monospace; font-size:13px; font-weight:700;">{{ s.no }}</div>
-            <div class="svc-arrow" style="font-size:18px; transition:transform .3s;">↗</div>
+            <div class="svc-arrow" style="font-size:30px; font-weight:700; color:#8E72C9; line-height:1; transition:transform .3s;">↗</div>
           </div>
-          <img src="{{ s.img }}" alt="{{ s.title }}" style="width:100%; height:240px; margin-bottom:22px; object-fit:cover; border-radius:18px; display:block;">
+          <image-slot id="{{ s.slot }}" placeholder="{{ s.ph }}" shape="rounded" radius="18" style="width:100%; height:240px; margin-bottom:22px;"></image-slot>
           <h3 style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:25px; margin:0 0 6px;">{{ s.title }}</h3>
           <div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.14em; color:#1F3A5C; opacity:.5; margin-bottom:12px;">{{ s.en }}</div>
           <p style="font-size:14px; line-height:1.8; color:#5A6573; margin:0;">{{ s.desc }}</p>
-          <sc-if value="{{ s.url }}" hint-placeholder-val="{{ false }}">
+          <sc-if value="{{ s.external }}" hint-placeholder-val="{{ false }}">
             <a href="{{ s.url }}" target="_blank" rel="noopener" aria-label="{{ s.title }}" style="position:absolute; inset:0; z-index:4; border-radius:28px;"></a>
+          </sc-if>
+          <sc-if value="{{ s.internal }}" hint-placeholder-val="{{ false }}">
+            <a href="{{ s.url }}" aria-label="{{ s.title }}" style="position:absolute; inset:0; z-index:4; border-radius:28px;"></a>
           </sc-if>
         </div>
       </sc-for>
@@ -183,19 +210,19 @@
   <section id="strength" style="background:linear-gradient(160deg,#C9B8EC,#B9CEF0 55%,#BEE4D6); color:#1F3A5C; position:relative; overflow:hidden;">
     <div style="position:absolute; top:-60px; right:-40px; width:300px; height:300px; border-radius:50%; background:#ED88B0; opacity:.18; filter:blur(8px);"></div>
     <div style="position:absolute; bottom:-50px; left:-30px; width:240px; height:240px; border-radius:50%; background:#8FB0E6; opacity:.2; filter:blur(8px);"></div>
-    <div style="position:absolute; top:clamp(60px,9vw,120px); right:-2%; z-index:0; font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:clamp(70px,12vw,190px); line-height:.86; letter-spacing:-.02em; color:#fff; opacity:.42; pointer-events:none; text-align:right; white-space:nowrap;">WHY<br>JOIN<br>US?</div>
+    <div class="lp-watermark" style="position:absolute; top:clamp(60px,9vw,120px); right:-2%; z-index:0; font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:clamp(70px,12vw,190px); line-height:.86; letter-spacing:-.02em; color:#fff; opacity:.42; pointer-events:none; text-align:right; white-space:nowrap;">WHY<br>JOIN<br>US?</div>
     <div style="max-width:1320px; margin:0 auto; padding:clamp(70px,9vw,130px) clamp(20px,5vw,72px); position:relative; z-index:1;">
       <div class="reveal" data-reveal style="text-align:center; margin-bottom:clamp(44px,5vw,68px);">
         <div style="font-family:'Space Mono',monospace; font-size:24px; letter-spacing:.2em; color:#8E72C9; margin-bottom:14px;">02 — WHY JOIN US</div>
         <h2 style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:clamp(30px,4.6vw,58px); line-height:1.08; margin:0;">一蓮で働く、<span style="color:#ED88B0;">4つ</span>の理由</h2>
       </div>
 
-      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(16px,2vw,24px);">
+      <div class="lp-str-grid" style="display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(16px,2vw,24px);">
         <sc-for list="{{ strengths }}" as="p" hint-placeholder-count="4">
           <div class="reveal" data-reveal style="display:flex; gap:26px; padding:42px clamp(28px,3vw,44px); border:1px solid rgba(31,58,92,.1); border-radius:22px; background:rgba(255,255,255,.55);">
             <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:58px; line-height:1; color:{{ p.color }}; flex-shrink:0;">{{ p.no }}</div>
             <div>
-              <h3 style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:31px; margin:0 0 14px; white-space:nowrap;">{{ p.title }}</h3>
+              <h3 class="lp-str-title" style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:31px; margin:0 0 14px; white-space:nowrap;">{{ p.title }}</h3>
               <p style="font-size:20px; line-height:1.85; color:#16140F; margin:0;">{{ p.desc }}</p>
             </div>
           </div>
@@ -231,10 +258,10 @@
       <h2 style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:clamp(30px,4.4vw,56px); line-height:1.08; margin:0;">お客様の声</h2>
     </div>
     <div ref="{{ voicesTrackRef }}" class="voices-track" style="display:flex; gap:clamp(20px,2.5vw,28px); overflow-x:auto; -webkit-overflow-scrolling:touch; padding:4px 4px 20px; scrollbar-width:none; -ms-overflow-style:none;">
-      <sc-for list="{{ voicesLoop }}" as="v" hint-placeholder-count="3">
-        <div class="reveal" data-reveal style="flex:0 0 clamp(560px,72vw,980px); display:flex; flex-direction:column; gap:clamp(20px,2.2vw,28px); background:#fff; border:1px solid rgba(31,58,92,.1); border-radius:22px; padding:clamp(26px,2.8vw,40px); box-shadow:0 14px 34px -22px rgba(31,58,92,.5);">
+      <sc-for list="{{ voicesView }}" as="v" hint-placeholder-count="3">
+        <div class="reveal lp-voice-card" data-reveal style="flex:0 0 clamp(560px,72vw,980px); display:flex; flex-direction:column; gap:clamp(20px,2.2vw,28px); background:#fff; border:1px solid rgba(31,58,92,.1); border-radius:22px; padding:clamp(26px,2.8vw,40px); box-shadow:0 14px 34px -22px rgba(31,58,92,.5);">
           <div style="display:flex; gap:clamp(20px,2.4vw,32px);">
-            <div style="width:clamp(150px,16vw,210px); height:clamp(180px,20vw,240px); border-radius:16px; background:#EEF0F4; display:flex; align-items:center; justify-content:center; color:#A7AEBC; font-size:13px; flex-shrink:0;">お客様の写真</div>
+            <div style="flex-shrink:0;">{{ v.photoEl }}</div>
             <div style="display:flex; flex-direction:column; flex:1; min-width:0;">
               <div style="font-family:'Bricolage Grotesque',serif; font-size:56px; line-height:.6; color:{{ v.color }}; margin-bottom:12px;">“</div>
               <p style="font-size:18px; line-height:1.9; color:#1F3A5C; font-weight:500; margin:0 0 20px; flex:1;">{{ v.body }}</p>
@@ -244,14 +271,14 @@
               </div>
             </div>
           </div>
-          <div style="display:grid; grid-template-columns:1fr 32px 1fr; align-items:center; gap:10px; padding-top:20px; border-top:1px dashed rgba(31,58,92,.18);">
+          <div class="lp-ba-grid" style="display:grid; grid-template-columns:1fr 32px 1fr; align-items:center; gap:10px; padding-top:20px; border-top:1px dashed rgba(31,58,92,.18);">
             <div style="position:relative;">
-              <div style="width:100%; height:clamp(200px,23vw,290px); border-radius:14px; background:#EEF0F4;"></div>
+              {{ v.beforeEl }}
               <span style="position:absolute; top:10px; left:10px; background:rgba(31,58,92,.85); color:#fff; font-family:'Space Mono',monospace; font-size:11px; letter-spacing:.1em; padding:4px 11px; border-radius:999px;">BEFORE</span>
             </div>
-            <div style="font-size:24px; color:{{ v.color }}; text-align:center; font-weight:700;">→</div>
+            <div class="lp-ba-arrow" style="font-size:24px; color:{{ v.color }}; text-align:center; font-weight:700;">→</div>
             <div style="position:relative;">
-              <div style="width:100%; height:clamp(200px,23vw,290px); border-radius:14px; background:#EEF0F4;"></div>
+              {{ v.afterEl }}
               <span style="position:absolute; top:10px; left:10px; background:{{ v.color }}; color:#fff; font-family:'Space Mono',monospace; font-size:11px; letter-spacing:.1em; padding:4px 11px; border-radius:999px;">AFTER</span>
             </div>
           </div>
@@ -270,8 +297,8 @@
         <h2 style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:clamp(32px,5.4vw,68px); line-height:1.06; margin:0 0 18px;">一緒に、まちを<br>つくりませんか。</h2>
         <p style="font-size:clamp(17px,2vw,22px); line-height:1.8; color:#1F3A5C; opacity:.82; max-width:30em; margin:0 auto 36px;">求人のご応募も、外構・土木工事のご相談も。<br>まずはお気軽にどうぞ。担当が丁寧にお答えします。</p>
         <div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center;">
-          <a href="mailto:office.ichiren@gmail.com" style="display:inline-flex; align-items:center; justify-content:center; gap:12px; background:#1F3A5C; color:#fff; font-weight:700; font-size:26px; padding:26px 50px; border-radius:999px; text-decoration:none; min-width:380px; box-sizing:border-box;">✉️ office.ichiren@gmail.com</a>
-          <a href="tel:0462595604" style="display:inline-flex; align-items:center; justify-content:center; gap:12px; background:#fff; color:#1F3A5C; font-weight:700; font-size:26px; padding:26px 50px; border-radius:999px; text-decoration:none; min-width:380px; box-sizing:border-box;">📞 046-259-5604</a>
+          <a href="mailto:office.ichiren@gmail.com" class="lp-cta-btn" style="display:inline-flex; align-items:center; justify-content:center; gap:12px; background:#1F3A5C; color:#fff; font-weight:700; font-size:26px; padding:26px 50px; border-radius:999px; text-decoration:none; min-width:380px; box-sizing:border-box;">✉️ office.ichiren@gmail.com</a>
+          <a href="tel:0462595604" class="lp-cta-btn" style="display:inline-flex; align-items:center; justify-content:center; gap:12px; background:#fff; color:#1F3A5C; font-weight:700; font-size:26px; padding:26px 50px; border-radius:999px; text-decoration:none; min-width:380px; box-sizing:border-box;">📞 046-259-5604</a>
         </div>
       </div>
     </div>
@@ -279,12 +306,12 @@
 
   <!-- LINE -->
   <section id="line" style="max-width:1320px; margin:0 auto; padding:clamp(20px,4vw,40px) clamp(20px,5vw,72px) clamp(70px,9vw,120px);">
-    <div class="reveal" data-reveal style="display:grid; grid-template-columns:1.3fr .7fr; gap:clamp(24px,4vw,56px); align-items:center; background:#06C755; color:#fff; border-radius:30px; padding:clamp(36px,5vw,64px); position:relative; overflow:hidden;">
+    <div class="reveal lp-line-grid" data-reveal style="display:grid; grid-template-columns:1.3fr .7fr; gap:clamp(24px,4vw,56px); align-items:center; background:#06C755; color:#fff; border-radius:30px; padding:clamp(36px,5vw,64px); position:relative; overflow:hidden;">
       <div>
         <div style="display:inline-flex; align-items:center; gap:10px; background:rgba(255,255,255,.18); padding:8px 16px; border-radius:999px; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:.1em; margin-bottom:22px;">
           <span style="width:20px;height:20px;border-radius:6px;background:#fff;color:#06C755;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;">L</span> 公式LINE
         </div>
-        <h2 style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:clamp(34px,4.8vw,60px); line-height:1.12; margin:0 0 16px; white-space:nowrap;">LINEで、ゆるっと相談。</h2>
+        <h2 class="lp-line-title" style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:clamp(34px,4.8vw,60px); line-height:1.12; margin:0 0 16px; white-space:nowrap;">LINEで、ゆるっと相談。</h2>
         <p style="font-size:clamp(18px,2vw,24px); line-height:1.7; font-weight:700; opacity:.98; max-width:28em; margin:0 0 28px;">「ちょっと話を聞いてみたい」だけでも大歓迎。</p>
         <a href="https://lin.ee/Imj5IEU" style="display:inline-flex; align-items:center; gap:10px; background:#fff; color:#06C755; font-weight:800; font-size:16px; padding:16px 30px; border-radius:999px; text-decoration:none;">友だち追加する →</a>
       </div>
@@ -297,7 +324,7 @@
             <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:12px; letter-spacing:.04em;">友だち募集中</span>
           </div>
           <div style="margin-top:6px;">
-            <div style="width:clamp(150px,18vw,200px); height:clamp(150px,18vw,200px); border-radius:10px; background:#06C755; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; color:#fff;"><svg viewBox="0 0 24 24" width="52" height="52" aria-hidden="true"><path fill="#fff" d="M12 3C6.48 3 2 6.62 2 11.08c0 2.55 1.46 4.82 3.75 6.32-.14.5-.63 2.18-.72 2.52-.11.42.16.42.33.31.13-.09 2.1-1.43 2.96-2.02.54.08 1.1.12 1.68.12 5.52 0 10-3.62 10-8.08S17.52 3 12 3z"/></svg><span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:15px; letter-spacing:.05em;">公式LINE</span></div>
+            <image-slot id="qr" placeholder="QRコードをドロップ" shape="rounded" radius="10" style="width:clamp(150px,18vw,200px); height:clamp(150px,18vw,200px);"></image-slot>
           </div>
           <div style="text-align:center; color:#1F3A5C; font-family:'Space Mono',monospace; font-size:11px; letter-spacing:.14em; margin-top:12px; font-weight:700;">SCAN &amp; ADD ICHIREN</div>
         </div>
@@ -306,16 +333,16 @@
   </section>
 
   <!-- FOOTER -->
-  <footer style="border-top:1.5px solid #1F3A5C; padding:clamp(36px,5vw,56px) clamp(20px,5vw,72px); max-width:1320px; margin:0 auto;">
+  <footer id="footer" style="border-top:1.5px solid #1F3A5C; padding:clamp(36px,5vw,56px) clamp(20px,5vw,72px); max-width:1320px; margin:0 auto;">
     <div style="display:flex; flex-wrap:wrap; gap:28px; align-items:center; justify-content:space-between;">
       <div style="display:flex; align-items:center; gap:14px;">
-        <img src="./logo-full.png" alt="一蓮建設株式会社ロゴ" style="height:92px; width:auto; display:block;">
+        <img src="./logo-full.png" alt="一蓮建設株式会社ロゴ" style="height:124px; width:auto; display:block;">
         <div style="line-height:1.2;">
-          <div style="font-weight:900; font-size:23px;">一蓮建設株式会社</div>
+          <div style="font-weight:900; font-size:30px;">一蓮建設株式会社</div>
           <div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:.2em; color:#9098A6;">ICHIREN CORPORATION</div>
         </div>
       </div>
-      <div style="font-size:12px; color:#9098A6; line-height:1.8;">造成 / 排水 / 舗装 / 外構工事<br>採用・お問い合わせ受付中</div>
+      <div style="font-size:12px; color:#9098A6; line-height:1.8; white-space:nowrap;">造成 / 排水 / 舗装 / 外構工事　採用・お問い合わせ受付中</div>
       <div style="font-family:'Space Mono',monospace; font-size:11px; color:#9098A6;">© 2026 ICHIREN CORPORATION</div>
     </div>
   </footer>
@@ -336,16 +363,30 @@ class Component extends DCLogic {
       frame2bRef: (el) => { this._f2b = el; },
       voicesTrackRef: (el) => { this._vtrack = el; },
       voices: [
-        { color: "#8E72C9", photo: "voice1", photoBefore: "voice1b", photoAfter: "voice1a", initial: "Y", name: "60代　Yご夫妻", role: "舗装・フェンス改修工事", body: "経年劣化で舗装やフェンスが傷んでいたため、以前から信頼していた一蓮建設さんに改修工事を依頼しましたが、工事前の住民への周知がとても丁寧でクレームも一切なく、舗装や排水マスの改善など見えない部分まで現場判断でしっかり対応していただき、事務所の方や現場の皆さんの挨拶も気持ちよく、お願いして本当に良かったと感じています。" },
-        { color: "#ED88B0", photo: "voice2", photoBefore: "voice2b", photoAfter: "voice2a", initial: "A", name: "70代　A様", role: "庭・カーポート整備", body: "古い小屋や樹木の管理、相続への不安をきっかけに一蓮建設さんへ相談し、大切に育ててきた樹木を活かしながら庭やカーポートを整えていただきましたが、完成した庭は周囲からの評判も良く、孫たちの遊び場や家族の憩いの場にもなり、孫の笑顔を見るたびに、お願いして本当に良かったと感じています。" },
-        { color: "#3E7CC2", photo: "voice3", photoBefore: "voice3b", photoAfter: "voice3a", initial: "A", name: "40代　A様", role: "石積み改修・耐震工事", body: "実家の石積みにヒビが入り、地震による倒壊の不安や高額な見積もりに悩んでいたところ、一蓮建設さんを紹介され、木村社長の「大丈夫ですよ、何とかなりますよ」という言葉に安心し、年末の忙しい時期にも関わらず、こちらの希望に寄り添いながら他社より大幅に抑えた金額で対応していただき、近隣への配慮も含めて無事に工事が完了し、母も安心できるようになり本当に感謝しています。" },
+        { color: "#8E72C9", photo: "voice1", photoImg: "./voice1.webp", hasPhoto: true, hasBefore: true, noBefore: false, beforeImg: "./voice1b.webp", photoBefore: "voice1b", hasAfter: true, noAfter: false, afterImg: "./voice1a.jpg", photoAfter: "voice1a", initial: "Y", name: "60代　Yご夫妻", role: "舗装・フェンス改修工事", body: "経年劣化で舗装やフェンスが傷んでいたため、以前から信頼していた一蓮建設さんに改修工事を依頼しましたが、工事前の住民への周知がとても丁寧でクレームも一切なく、舗装や排水マスの改善など見えない部分まで現場判断でしっかり対応していただき、事務所の方や現場の皆さんの挨拶も気持ちよく、お願いして本当に良かったと感じています。" },
+        { color: "#ED88B0", photo: "voice2", photoImg: "./voice2.webp", hasPhoto: true, hasBefore: true, noBefore: false, beforeImg: "./voice2b.jpg", photoBefore: "voice2b", hasAfter: true, noAfter: false, afterImg: "./voice2a.jpg", photoAfter: "voice2a", initial: "A", name: "70代　A様", role: "庭・カーポート整備", body: "古い小屋や樹木の管理、相続への不安をきっかけに一蓮建設さんへ相談し、大切に育ててきた樹木を活かしながら庭やカーポートを整えていただきましたが、完成した庭は周囲からの評判も良く、孫たちの遊び場や家族の憩いの場にもなり、孫の笑顔を見るたびに、お願いして本当に良かったと感じています。" },
+        { color: "#3E7CC2", photo: "voice3", photoImg: "./voice3.webp", hasPhoto: true, hasBefore: true, noBefore: false, beforeImg: "./voice3b.webp", photoBefore: "voice3b", hasAfter: true, noAfter: false, afterImg: "./voice3a.jpg", photoAfter: "voice3a", initial: "A", name: "40代　A様", role: "石積み改修・耐震工事", body: "実家の石積みにヒビが入り、地震による倒壊の不安や高額な見積もりに悩んでいたところ、一蓮建設さんを紹介され、木村社長の「大丈夫ですよ、何とかなりますよ」という言葉に安心し、年末の忙しい時期にも関わらず、こちらの希望に寄り添いながら他社より大幅に抑えた金額で対応していただき、近隣への配慮も含めて無事に工事が完了し、母も安心できるようになり本当に感謝しています。" },
       ],
-      get voicesLoop() { return this.voices.concat(this.voices); },
+      get voicesView() {
+        const photoStyle = { width: "clamp(150px,16vw,210px)", height: "clamp(180px,20vw,240px)", objectFit: "cover", borderRadius: "16px", display: "block" };
+        const baStyle = { width: "100%", height: "clamp(200px,23vw,290px)", objectFit: "cover", borderRadius: "14px", display: "block" };
+        const phStyle = { width: "100%", height: "clamp(200px,23vw,290px)", borderRadius: "14px", background: "#EEF0F4" };
+        return this.voices.map((v) => ({
+          ...v,
+          photoEl: React.createElement("img", { src: v.photoImg, alt: "お客様", style: photoStyle }),
+          beforeEl: v.hasBefore
+            ? React.createElement("img", { src: v.beforeImg, alt: "施工前", style: baStyle })
+            : React.createElement("div", { style: phStyle }),
+          afterEl: v.hasAfter
+            ? React.createElement("img", { src: v.afterImg, alt: "施工後", style: baStyle })
+            : React.createElement("div", { style: phStyle }),
+        }));
+      },
       services: [
-        { no: "01", slot: "svc1", img: "./gaikou1.jpg", ph: "土木イメージ", title: "土木部", en: "CIVIL ENGINEERING", bg: "#EBE6F7", url: "https://ichirenfudosan.com/company.html", desc: "土地を切り盛りし、宅地や敷地の形を整える。すべての工事の出発点となる、まちづくりの基礎です。" },
-        { no: "02", slot: "svc2", img: "./ext-hero.jpg", ph: "外構イメージ", title: "エクステリア事業部", en: "EXTERIOR WORKS", bg: "#FBE4ED", url: "exterior.html", desc: "門・塀・アプローチから植栽まで。建物の“顔”となる外まわりを、機能と美しさの両面で仕上げます。" },
-        { no: "03", slot: "svc3", img: "./gaikou5.jpg", ph: "不動産イメージ", title: "不動産事業部", en: "REAL ESTATE", bg: "#FBEADC", url: "https://ichirenfudosan.com/pc.html", desc: "土地・建物の売買や活用のご相談に対応。施工で培った知見を活かし、最適な土地活用をご提案します。" },
-        { no: "04", slot: "svc4", img: "./gaikou3.jpg", ph: "テラスハウスイメージ", title: "テラスハウス事業部", en: "TERRACE HOUSE", bg: "#DEF1EA", url: "https://ichirenfudosan.com/terrace.html", desc: "設計から施工・管理までを一貫対応。暮らしやすさにこだわり、住む人に長く愛されるテラスハウスをつくります。" },
+        { no: "01", slot: "svc1", ph: "土木イメージ", title: "土木部", en: "CIVIL ENGINEERING", bg: "#EBE6F7", url: "https://ichirenfudosan.com/company.html", external: true, desc: "土地を切り盛りし、宅地や敷地の形を整える。すべての工事の出発点となる、まちづくりの基礎です。" },
+        { no: "02", slot: "svc2", ph: "外構イメージ", title: "エクステリア事業部", en: "EXTERIOR WORKS", bg: "#FBE4ED", url: "exterior.html", internal: true, desc: "門・塀・アプローチから植栽まで。建物の“顔”となる外まわりを、機能と美しさの両面で仕上げます。" },
+        { no: "03", slot: "svc3", ph: "不動産イメージ", title: "不動産事業部", en: "REAL ESTATE", bg: "#FBEADC", url: "https://ichirenfudosan.com/pc.html", external: true, desc: "土地・建物の売買や活用のご相談に対応。施工で培った知見を活かし、最適な土地活用をご提案します。" },
+        { no: "04", slot: "svc4", ph: "テラスハウスイメージ", title: "テラスハウス事業部", en: "TERRACE HOUSE", bg: "#DEF1EA", url: "https://ichirenfudosan.com/terrace.html", external: true, desc: "設計から施工・管理までを一貫対応。暮らしやすさにこだわり、住む人に長く愛されるテラスハウスをつくります。" },
       ],
       strengths: [
         { no: "01", color: "#8E72C9", title: "未経験から、一人前へ", desc: "入社後は先輩がマンツーマンでサポート。工具の名前から重機の操作まで、段階を踏んでしっかり身につけられます。" },
@@ -409,15 +450,17 @@ class Component extends DCLogic {
     const track = this._vtrack;
     if (track) {
       let paused = false;
+      let dir = 1;
       track.addEventListener("mouseenter", () => { paused = true; });
       track.addEventListener("mouseleave", () => { paused = false; });
       track.addEventListener("pointerdown", () => { paused = true; });
       window.addEventListener("pointerup", () => { paused = false; });
       const step = () => {
-        if (!paused && track.scrollWidth > track.clientWidth) {
-          track.scrollLeft += 0.5;
-          const half = track.scrollWidth / 2;
-          if (track.scrollLeft >= half) track.scrollLeft -= half;
+        const max = track.scrollWidth - track.clientWidth;
+        if (!paused && max > 2) {
+          track.scrollLeft += 0.5 * dir;
+          if (track.scrollLeft >= max - 0.5) dir = -1;
+          else if (track.scrollLeft <= 0.5) dir = 1;
         }
         this._vraf = requestAnimationFrame(step);
       };

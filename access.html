@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>所在地・アクセス｜一蓮建設株式会社</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:'Zen Kaku Gothic New',sans-serif;background:#FFFFFF;color:#1F3A5C;-webkit-font-smoothing:antialiased;}
+  ::selection{background:#8E72C9;color:#fff;}
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,56px);}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+    padding:18px clamp(20px,5vw,56px);background:#FFFFFF;border-bottom:1px solid rgba(31,58,92,.1);}
+  nav .brand{display:flex;align-items:center;gap:12px;}
+  nav .brand img{height:40px;width:auto;display:block;}
+  nav .brand .nm{font-weight:900;font-size:16px;letter-spacing:.02em;}
+  nav .brand .en{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.22em;color:#9098A6;}
+  nav .back{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;text-decoration:none;
+    border:1.5px solid #1F3A5C;padding:11px 22px;border-radius:999px;transition:transform .18s,box-shadow .18s;}
+  nav .back:hover{transform:translateY(-2px);box-shadow:0 10px 24px -12px rgba(31,58,92,.5);}
+
+  /* SPECTRUM */
+  .spectrum{display:flex;height:7px;}
+  .spectrum i{flex:1;}
+  .spectrum i:nth-child(1){background:#DB4B34;}
+  .spectrum i:nth-child(2){background:#F0B429;}
+  .spectrum i:nth-child(3){background:#3E7CC2;}
+
+  /* HERO */
+  header.page{padding:clamp(48px,7vw,86px) 0 clamp(28px,4vw,40px);}
+  .eyebrow{font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.2em;color:#8E72C9;margin-bottom:16px;}
+  h1{font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif;font-weight:800;
+    font-size:clamp(32px,5vw,56px);line-height:1.12;margin:0 0 18px;letter-spacing:.01em;}
+  header.page .lead{font-size:15px;line-height:1.9;color:#4A5A6E;max-width:40em;margin:0;}
+
+  /* CONTENT */
+  main{padding-bottom:clamp(56px,8vw,100px);}
+  .grid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(24px,3.5vw,48px);align-items:start;}
+
+  .info{background:#F5F3FA;border:1px solid rgba(142,114,201,.25);border-radius:20px;
+    padding:clamp(26px,3vw,38px);}
+  .info h2{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:22px;margin:0 0 20px;}
+  .info .row{padding:14px 0;border-bottom:1px dashed rgba(31,58,92,.16);}
+  .info .row:last-child{border-bottom:none;}
+  .info .k{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;color:#8E72C9;font-weight:700;margin-bottom:6px;}
+  .info .v{font-size:16px;line-height:1.85;color:#23364B;font-weight:500;}
+  .info .v a{font-weight:700;color:#8E72C9;text-decoration:none;}
+  .btn{display:inline-flex;align-items:center;gap:10px;margin-top:24px;background:#1F3A5C;color:#fff;
+    font-weight:700;font-size:15px;padding:16px 30px;border-radius:999px;text-decoration:none;
+    transition:transform .18s,box-shadow .18s;}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(31,58,92,.6);}
+
+  .mapcard{border-radius:20px;overflow:hidden;border:1px solid rgba(31,58,92,.12);
+    box-shadow:0 20px 44px -26px rgba(31,58,92,.5);background:#eceef2;}
+  .mapcard iframe{display:block;width:100%;height:clamp(340px,44vw,520px);border:0;}
+
+  /* FOOTER */
+  footer{border-top:1.5px solid #1F3A5C;}
+  footer .in{max-width:1080px;margin:0 auto;padding:clamp(30px,4vw,46px) clamp(20px,5vw,56px);
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;}
+  footer .lg{display:flex;align-items:center;gap:13px;}
+  footer .lg img{height:64px;width:auto;display:block;}
+  footer .lg .nm{font-weight:900;font-size:17px;}
+  footer .lg .en{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.2em;color:#9098A6;}
+  footer .cp{font-family:'Space Mono',monospace;font-size:11px;color:#9098A6;}
+
+  @media(max-width:760px){
+    .grid{grid-template-columns:1fr;}
+  }
+  @media(max-width:620px){
+    nav .brand .en{display:none;}
+  }
+</style>
+</head>
+<body>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#EAF0F8"/><path d="M50 26c-9 0-16 7-16 16 0 12 16 30 16 30s16-18 16-30c0-9-7-16-16-16z" fill="#3E7CC2"/><circle cx="50" cy="42" r="6" fill="#fff"/><text x="50" y="88" font-size="11" font-family="sans-serif" font-weight="700" fill="#1F3A5C" text-anchor="middle">ACCESS</text></svg></template>
+
+<nav>
+  <a class="brand" href="index.html" style="text-decoration:none;">
+    <img src="./logo-mark.png" alt="一蓮建設ロゴ">
+    <div style="line-height:1.08;">
+      <div class="nm">一蓮建設株式会社</div>
+      <div class="en">ICHIREN&nbsp;CORPORATION</div>
+    </div>
+  </a>
+  <a class="back" href="index.html">← トップページに戻る</a>
+</nav>
+<div class="spectrum" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<div class="wrap">
+  <header class="page">
+    <div class="eyebrow">ACCESS ／ 所在地</div>
+    <h1>所在地・アクセス</h1>
+    <p class="lead">ご来社・お打ち合わせの際は、下記をご参照ください。お車でお越しの方は、事前にお電話いただけますとご案内がスムーズです。</p>
+  </header>
+
+  <main>
+    <div class="grid">
+      <div class="info">
+        <h2>一蓮建設株式会社</h2>
+        <div class="row">
+          <div class="k">ADDRESS ／ 住所</div>
+          <div class="v">〒243-0813<br>神奈川県厚木市妻田東３－３９－５<br>アパートメントスペース｜１０３</div>
+        </div>
+        <div class="row">
+          <div class="k">TEL ／ 電話</div>
+          <div class="v"><a href="tel:0462595604">046-259-5604</a></div>
+        </div>
+        <div class="row">
+          <div class="k">MAIL ／ メール</div>
+          <div class="v"><a href="mailto:office.ichiren@gmail.com">office.ichiren@gmail.com</a></div>
+        </div>
+        <div class="row">
+          <div class="k">HOURS ／ 受付時間</div>
+          <div class="v">平日 10:00〜18:00</div>
+        </div>
+        <a class="btn" href="https://maps.app.goo.gl/LiXMhXfuVdNCP7WU9" target="_blank" rel="noopener">Googleマップで見る <span>↗</span></a>
+      </div>
+
+      <div class="mapcard">
+        <iframe title="一蓮建設株式会社 地図" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25992.190924783798!2d139.33254652530172!3d35.47895334023464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6019001e9823ffff%3A0x6ce1ee7a0d736bc7!2z5LiA6JOu5bu66Kit5qCq5byP5Lya56S-!5e0!3m2!1sja!2sjp!4v1782955778441!5m2!1sja!2sjp"></iframe>
+      </div>
+    </div>
+  </main>
+</div>
+
+<footer>
+  <div class="in">
+    <div class="lg">
+      <img src="./logo-full.png" alt="一蓮建設株式会社ロゴ">
+      <div style="line-height:1.2;">
+        <div class="nm">一蓮建設株式会社</div>
+        <div class="en">ICHIREN CORPORATION</div>
+      </div>
+    </div>
+    <div class="cp">© 2026 ICHIREN CORPORATION</div>
+  </div>
+</footer>
+</body>
+</html>

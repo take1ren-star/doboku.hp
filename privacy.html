@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プライバシーポリシー｜一蓮建設株式会社</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:'Zen Kaku Gothic New',sans-serif;background:#FFFFFF;color:#1F3A5C;-webkit-font-smoothing:antialiased;}
+  ::selection{background:#8E72C9;color:#fff;}
+  a{color:inherit;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 clamp(20px,5vw,56px);}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+    padding:18px clamp(20px,5vw,56px);background:#FFFFFF;border-bottom:1px solid rgba(31,58,92,.1);}
+  nav .brand{display:flex;align-items:center;gap:12px;}
+  nav .brand img{height:40px;width:auto;display:block;}
+  nav .brand .nm{font-weight:900;font-size:16px;letter-spacing:.02em;}
+  nav .brand .en{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.22em;color:#9098A6;}
+  nav .back{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;text-decoration:none;
+    border:1.5px solid #1F3A5C;padding:11px 22px;border-radius:999px;transition:transform .18s,box-shadow .18s;}
+  nav .back:hover{transform:translateY(-2px);box-shadow:0 10px 24px -12px rgba(31,58,92,.5);}
+
+  /* SPECTRUM */
+  .spectrum{display:flex;height:7px;}
+  .spectrum i{flex:1;}
+  .spectrum i:nth-child(1){background:#DB4B34;}
+  .spectrum i:nth-child(2){background:#F0B429;}
+  .spectrum i:nth-child(3){background:#3E7CC2;}
+
+  /* HERO */
+  header.page{padding:clamp(48px,7vw,90px) 0 clamp(28px,4vw,44px);}
+  .eyebrow{font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.2em;color:#8E72C9;margin-bottom:16px;}
+  h1{font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif;font-weight:800;
+    font-size:clamp(32px,5vw,56px);line-height:1.12;margin:0 0 18px;letter-spacing:.01em;}
+  header.page .lead{font-size:15px;line-height:1.9;color:#4A5A6E;max-width:42em;margin:0;}
+
+  /* BODY */
+  main{padding-bottom:clamp(50px,7vw,90px);}
+  .sec{padding:clamp(26px,3vw,38px) 0;border-top:1px solid rgba(31,58,92,.1);}
+  .sec:first-child{border-top:none;}
+  .sec h2{display:flex;align-items:baseline;gap:14px;font-family:'Zen Kaku Gothic New',sans-serif;
+    font-weight:900;font-size:clamp(19px,2.4vw,24px);line-height:1.35;margin:0 0 16px;}
+  .sec h2 .no{font-family:'Space Mono',monospace;font-size:14px;color:#8E72C9;flex-shrink:0;}
+  .sec p{font-size:15px;line-height:1.95;color:#33465C;margin:0 0 14px;}
+  .sec p:last-child{margin-bottom:0;}
+  .sec ul{margin:0;padding-left:1.2em;}
+  .sec li{font-size:15px;line-height:1.95;color:#33465C;margin-bottom:8px;}
+
+  /* CONTACT CARD */
+  .info{margin-top:8px;background:#F5F3FA;border:1px solid rgba(142,114,201,.25);border-radius:18px;
+    padding:clamp(24px,3vw,34px);}
+  .info .row{display:flex;flex-wrap:wrap;gap:6px 18px;padding:11px 0;border-bottom:1px dashed rgba(31,58,92,.16);}
+  .info .row:last-child{border-bottom:none;}
+  .info .k{font-weight:700;font-size:14px;color:#1F3A5C;min-width:100px;}
+  .info .v{font-size:15px;color:#33465C;line-height:1.8;}
+  .info .v a{font-weight:700;color:#8E72C9;text-decoration:none;}
+
+  /* FOOTER */
+  footer{border-top:1.5px solid #1F3A5C;}
+  footer .in{max-width:920px;margin:0 auto;padding:clamp(30px,4vw,46px) clamp(20px,5vw,56px);
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;}
+  footer .lg{display:flex;align-items:center;gap:13px;}
+  footer .lg img{height:64px;width:auto;display:block;}
+  footer .lg .nm{font-weight:900;font-size:17px;}
+  footer .lg .en{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.2em;color:#9098A6;}
+  footer .cp{font-family:'Space Mono',monospace;font-size:11px;color:#9098A6;}
+
+  .updated{font-family:'Space Mono',monospace;font-size:12px;color:#9098A6;padding-top:26px;}
+
+  @media(max-width:620px){
+    nav .brand .en{display:none;}
+    .info .k{min-width:auto;width:100%;}
+  }
+</style>
+</head>
+<body>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#F5F3FA"/><circle cx="50" cy="40" r="19" fill="#8E72C9"/><path d="M44 40l4 4 8-8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="50" y="80" font-size="11" font-family="sans-serif" font-weight="700" fill="#1F3A5C" text-anchor="middle">PRIVACY</text></svg></template>
+
+<nav>
+  <a class="brand" href="index.html" style="text-decoration:none;">
+    <img src="./logo-mark.png" alt="一蓮建設ロゴ">
+    <div style="line-height:1.08;">
+      <div class="nm">一蓮建設株式会社</div>
+      <div class="en">ICHIREN&nbsp;CORPORATION</div>
+    </div>
+  </a>
+  <a class="back" href="index.html">← トップページに戻る</a>
+</nav>
+<div class="spectrum" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<div class="wrap">
+  <header class="page">
+    <div class="eyebrow">PRIVACY POLICY</div>
+    <h1>プライバシーポリシー</h1>
+    <p class="lead">一蓮建設株式会社（以下「当社」といいます。）は、お客様の個人情報の重要性を認識し、個人情報保護に関する法令・ガイドライン等を遵守のうえ、以下のとおり適切に取り扱います。</p>
+  </header>
+
+  <main>
+    <div class="sec">
+      <h2><span class="no">01</span>個人情報取り扱いに関する基本方針</h2>
+      <p>当社は、個人情報を適正な手段で取得し、利用目的の範囲内で利用・提供します。個人情報の漏えい、滅失または毀損の防止その他の安全管理のために必要かつ適切な措置を講じ、継続的に見直し・改善に努めます。</p>
+    </div>
+
+    <div class="sec">
+      <h2><span class="no">02</span>個人情報の定義</h2>
+      <p>「個人情報」とは、氏名、住所、電話番号、メールアドレス等、特定の個人を識別できる情報を指します。単体では識別できない場合でも、他の情報と容易に照合でき、個人を識別できるものを含みます。</p>
+    </div>
+
+    <div class="sec">
+      <h2><span class="no">03</span>個人情報の取得方法</h2>
+      <p>当社は、お問い合わせフォーム、電話、メール、名刺交換等を通じて、お客様ご本人から適法かつ公正な手段により個人情報を取得します。不正な方法で取得することはありません。</p>
+    </div>
+
+    <div class="sec">
+      <h2><span class="no">04</span>個人情報の利用目的</h2>
+      <ul>
+        <li>お問い合わせ・ご相談への対応、本人確認、各種連絡</li>
+        <li>土木・建築・不動産関連業務の見積、契約、施工、アフターサービス等の遂行</li>
+        <li>当社サービス・イベント等に関する案内、資料送付</li>
+        <li>当社サービス改善・品質向上のための分析・統計資料の作成（個人が特定されない形での利用を含む）</li>
+        <li>法令・行政機関の要請等に基づく対応</li>
+      </ul>
+    </div>
+
+    <div class="sec">
+      <h2><span class="no">05</span>個人情報の管理方法（安全管理措置）</h2>
+      <ul>
+        <li>アクセス制御、持ち出し制限、バックアップ等の技術的・物理的安全管理措置</li>
+        <li>従業者への教育・監督、委託先への適切な監督</li>
+        <li>正確性の確保、必要な保存期間経過後の適切な消去</li>
+      </ul>
+    </div>
+
+    <div class="sec">
+      <h2><span class="no">06</span>個人データの共同利用について</h2>
+      <p>当社は、必要な場合に限り、以下のとおり個人データを共同利用します。</p>
+      <ul>
+        <li>共同利用する者の範囲：当社グループ会社</li>
+        <li>共同利用の目的：上記「04．個人情報の利用目的」と同一</li>
+        <li>共同利用する項目：氏名、住所、連絡先、契約・施工内容、問い合わせ内容 等</li>
+        <li>管理責任者：一蓮建設株式会社（連絡先は本ポリシー末尾をご参照ください）</li>
+      </ul>
+    </div>
+
+    <div class="sec">
+      <h2><span class="no">07</span>個人データの第三者提供について</h2>
+      <p>当社は、次の場合を除き、本人の同意なく個人データを第三者に提供しません。</p>
+      <ul>
+        <li>法令に基づく場合</li>
+        <li>人の生命、身体または財産の保護のために必要で、本人の同意取得が困難な場合</li>
+        <li>公衆衛生の向上又は児童の健全な育成推進のために特に必要で、本人の同意取得が困難な場合</li>
+        <li>国の機関等への協力が必要な場合で、同意取得により当該事務の遂行に支障を及ぼすおそれがあるとき</li>
+        <li>業務委託（配送・システム保守等）で、委託先に必要な範囲で提供する場合（この場合、委託先を適切に監督します）</li>
+      </ul>
+    </div>
+
+    <div class="sec">
+      <h2><span class="no">08</span>開示・訂正・利用停止等の請求手続き</h2>
+      <p>当社が保有するお客様の個人データについて、開示、訂正・追加・削除、利用停止・消去又は第三者提供の停止のご請求があった場合、本人確認のうえ、法令に基づき速やかに対応します。具体的な手続きは、下記窓口にご連絡ください。</p>
+    </div>
+
+    <div class="sec">
+      <h2><span class="no">09</span>SSLセキュリティについて</h2>
+      <p>当社Webサイトでは、送信される個人情報を保護するため、SSL（Secure Socket Layer）等の暗号化通信を使用しています。対応ブラウザ・通信環境により一部機能がご利用いただけない場合があります。</p>
+    </div>
+
+    <div class="sec">
+      <h2><span class="no">10</span>Cookie（クッキー）について</h2>
+      <p>当社Webサイトでは、利便性向上や利用状況の把握のためCookieを使用する場合があります。Cookie自体には個人を特定できる情報は含まれません。ブラウザ設定によりCookieを無効化できますが、サイトの一部機能が正しく動作しない場合があります。アクセス解析ツール（例：Google Analytics）を利用する場合、ツール提供者に対して匿名化された情報が送信されることがあります。</p>
+    </div>
+
+    <div class="sec">
+      <h2><span class="no">11</span>個人情報に関するお問い合わせ窓口</h2>
+      <div class="info">
+        <div class="row"><span class="k">窓口名</span><span class="v">一蓮建設株式会社　個人情報問合せ窓口</span></div>
+        <div class="row"><span class="k">所在地</span><span class="v">〒243-0813　神奈川県厚木市妻田東３－３９－５ アパートメントスペース｜１０３</span></div>
+        <div class="row"><span class="k">TEL</span><span class="v"><a href="tel:0462595604">046-259-5604</a>（受付時間：平日10:00〜18:00）</span></div>
+      </div>
+    </div>
+
+    <p class="updated">制定日：2026年7月1日</p>
+  </main>
+</div>
+
+<footer>
+  <div class="in">
+    <div class="lg">
+      <img src="./logo-full.png" alt="一蓮建設株式会社ロゴ">
+      <div style="line-height:1.2;">
+        <div class="nm">一蓮建設株式会社</div>
+        <div class="en">ICHIREN CORPORATION</div>
+      </div>
+    </div>
+    <div class="cp">© 2026 ICHIREN CORPORATION</div>
+  </div>
+</footer>
+</body>
+</html>
