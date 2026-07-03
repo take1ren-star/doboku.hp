@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宅地造成 土木作業員 採用｜一蓮建設株式会社</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16181d;
+    --ink-soft:#23262e;
+    --concrete:#e7e4dd;
+    --paper:#f5f3ee;
+    --grey:#5f5a53;
+    --line:#cfcabf;
+    --amber:#e5a019;
+    --amber-deep:#c9821a;
+    --rust:#9a4b26;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:"Noto Sans JP",sans-serif;
+    background:var(--concrete);
+    color:var(--ink);
+    line-height:1.85;
+    font-weight:400;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:760px;margin:0 auto;background:var(--concrete);position:relative}
+
+  .rail{position:absolute;top:0;bottom:0;left:0;width:34px;
+    background:
+      repeating-linear-gradient(to bottom,transparent 0,transparent 39px,var(--line) 39px,var(--line) 40px),
+      repeating-linear-gradient(to bottom,transparent 0,transparent 199px,var(--amber) 199px,var(--amber) 200px);
+    border-right:1px solid var(--line);opacity:.55;pointer-events:none;z-index:0}
+  @media(max-width:620px){.rail{display:none}}
+
+  .display{font-family:"Zen Kaku Gothic New",sans-serif}
+  .mono{font-family:"Space Mono",monospace;font-feature-settings:"tnum"}
+
+  /* ---- HERO ---- */
+  .hero{background:var(--ink);color:var(--paper);padding:54px 40px 50px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;
+    border:14px solid rgba(229,160,25,.16);border-radius:50%}
+  .brand{display:flex;align-items:center;gap:12px;font-size:13px;letter-spacing:.18em;color:#b9b3a7;position:relative;z-index:1}
+  .brand b{color:var(--amber);font-weight:700}
+  .eyebrow{margin-top:34px;display:inline-block;font-size:12.5px;letter-spacing:.22em;
+    color:var(--ink);background:var(--amber);padding:6px 14px;font-weight:700;position:relative;z-index:1}
+  .hero h1{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;
+    font-size:clamp(28px,6.6vw,46px);line-height:1.32;margin-top:22px;letter-spacing:.01em;position:relative;z-index:1}
+  .hero h1 .hl{color:var(--amber)}
+  .hero .lead{margin-top:20px;font-size:15.5px;color:#d8d2c6;max-width:54ch;position:relative;z-index:1}
+  .hero .lead b{color:var(--paper);font-weight:700;border-bottom:2px solid var(--amber);padding-bottom:1px}
+
+  .spec{display:flex;flex-wrap:wrap;gap:14px 34px;margin-top:38px;padding-top:26px;
+    border-top:1px solid #3a3d45;position:relative;z-index:1}
+  .spec .blk{display:flex;flex-direction:column}
+  .spec .k{font-size:11px;letter-spacing:.16em;color:#9a958b}
+  .spec .v{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;font-feature-settings:"tnum";font-size:clamp(24px,5.4vw,33px);letter-spacing:.01em;color:var(--paper);line-height:1.2}
+  .spec .v small{font-size:13px;color:var(--amber);font-weight:700}
+  .spec .v .yen{font-family:"Noto Sans JP";font-size:14px}
+
+  .tagrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;position:relative;z-index:1}
+  .tag{font-size:12px;border:1px solid #44474f;color:#cfc9bd;padding:5px 11px;border-radius:2px}
+
+  /* ---- SECTION SHELL ---- */
+  section{padding:48px 40px;position:relative;z-index:1}
+  @media(max-width:620px){.hero,section{padding-left:24px;padding-right:24px}}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:26px}
+  .sec-idx{font-family:"Space Mono",monospace;font-size:13px;color:var(--amber-deep);font-weight:700}
+  .sec-title{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;
+    font-size:clamp(20px,4.6vw,27px);line-height:1.3;letter-spacing:.01em}
+  .sec-title .u{box-shadow:inset 0 -10px 0 rgba(229,160,25,.32)}
+
+  .joint{border-top:2px solid var(--ink);margin:0 40px;position:relative;z-index:1}
+  .joint::before{content:"";display:block;border-top:6px solid var(--concrete);
+    border-bottom:1px solid var(--line)}
+  @media(max-width:620px){.joint{margin:0 24px}}
+
+  /* lead statement */
+  .answer{margin-top:8px;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;
+    font-size:clamp(17px,4vw,21px);line-height:1.55}
+  .answer .hl{color:var(--amber-deep)}
+
+  /* want list (dark) */
+  .gain{background:var(--ink);color:var(--paper);border-radius:4px;padding:30px 28px}
+  .gain .lbl{font-size:11px;letter-spacing:.18em;color:var(--amber);margin-bottom:18px}
+  .gain ul{list-style:none;display:grid;gap:13px}
+  .gain li{display:flex;gap:13px;font-size:14.5px;line-height:1.6;align-items:flex-start;
+    padding-bottom:13px;border-bottom:1px solid #2e313a}
+  .gain li:last-child{border-bottom:0;padding-bottom:0}
+  .gain li .ck{font-family:"Space Mono",monospace;color:var(--amber);font-weight:700;flex:0 0 auto}
+  .notes{margin-top:18px;display:grid;gap:7px}
+  .notes .n{font-size:12.5px;color:var(--grey);line-height:1.7;padding-left:15px;position:relative}
+  .notes .n::before{content:"※";position:absolute;left:0;color:var(--amber-deep)}
+
+  /* culture cards */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.grid2{grid-template-columns:1fr}}
+  .card{background:var(--paper);border:1px solid var(--line);padding:18px 18px 20px;border-radius:3px}
+  .card h4{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:15.5px;margin-bottom:6px;
+    display:flex;align-items:center;gap:9px}
+  .card h4 .dot{width:8px;height:8px;background:var(--amber);flex:0 0 8px;transform:rotate(45deg)}
+  .card p{font-size:13.5px;color:var(--grey);line-height:1.7}
+
+  /* fit / not-fit + requirements share .req */
+  .req{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.req{grid-template-columns:1fr}}
+  .reqbox{border:1px solid var(--line);border-radius:3px;background:var(--paper);padding:20px}
+  .reqbox.must{border-top:5px solid var(--rust)}
+  .reqbox.want{border-top:5px solid var(--amber)}
+  .reqbox .lbl{font-family:"Zen Kaku Gothic New";font-weight:700;font-size:14px;margin-bottom:14px;
+    display:flex;align-items:center;gap:9px}
+  .reqbox .lbl .pill{font-family:"Space Mono";font-size:10px;letter-spacing:.05em;color:#fff;
+    padding:2px 8px;border-radius:2px}
+  .reqbox.must .pill{background:var(--rust)}
+  .reqbox.want .pill{background:var(--amber-deep)}
+  .reqbox ul{list-style:none;display:grid;gap:9px}
+  .reqbox li{font-size:13.5px;line-height:1.6;padding-left:16px;position:relative;color:#2a2d34}
+  .reqbox.want li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;
+    background:var(--amber);transform:rotate(45deg)}
+  .reqbox.must li::before{content:"×";position:absolute;left:0;top:0;color:var(--rust);font-weight:700}
+  .req-foot{margin-top:14px;font-size:13px;font-weight:500;color:var(--ink);
+    background:rgba(229,160,25,.16);display:inline-block;padding:6px 13px;border-radius:2px}
+
+  /* work scope */
+  .scope{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:560px){.scope{grid-template-columns:1fr}}
+  .scope .it{background:var(--paper);border:1px solid var(--line);border-radius:3px;
+    padding:15px 16px;display:flex;gap:13px;align-items:center}
+  .scope .it .no{font-family:"Space Mono",monospace;font-weight:700;font-size:13px;color:var(--amber-deep)}
+  .scope .it span{font-weight:500;font-size:14.5px}
+  .scope-note{margin-top:14px;font-size:12.5px;color:var(--grey)}
+
+  /* schedule */
+  .day{background:var(--paper);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+  .day .top{background:var(--ink-soft);color:var(--paper);padding:11px 16px;
+    font-family:"Zen Kaku Gothic New";font-weight:700;font-size:14px;display:flex;justify-content:space-between;align-items:center}
+  .day .top .badge{font-family:"Space Mono";font-size:11px;color:var(--amber);font-weight:700}
+  .day .row{display:flex;gap:14px;padding:9px 16px;border-bottom:1px solid var(--line);align-items:baseline}
+  .day .row:last-child{border-bottom:0}
+  .day .t{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;font-feature-settings:"tnum";font-size:15px;color:var(--ink);flex:0 0 56px}
+  .day .a{font-size:13.5px;color:var(--grey)}
+  .day .a b{color:var(--ink);font-weight:500}
+
+  /* pay */
+  .paywrap{background:var(--ink);color:var(--paper);border-radius:4px;padding:32px 28px}
+  .paywrap .big{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap}
+  .paywrap .big .num{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;font-feature-settings:"tnum";
+    font-size:clamp(36px,8.6vw,56px);letter-spacing:.01em;color:var(--amber);line-height:1}
+  .paywrap .big .unit{font-size:15px;color:#cfc9bd;padding-bottom:6px}
+  .paywrap .sub{margin-top:8px;font-size:13.5px;color:#ddd7cb}
+  .paywrap .sub b{color:var(--amber);font-weight:700}
+  .payrow{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:26px;
+    background:#2e313a;border:1px solid #2e313a;border-radius:3px;overflow:hidden}
+  @media(max-width:560px){.payrow{grid-template-columns:1fr}}
+  .payrow .cell{background:var(--ink-soft);padding:15px 17px}
+  .payrow .cell .k{font-size:11px;letter-spacing:.14em;color:#9a958b}
+  .payrow .cell .v{font-family:"Zen Kaku Gothic New";font-weight:700;font-size:17px;margin-top:4px}
+  .payrow .cell .v small{font-family:"Noto Sans JP";font-size:12px;color:#cfc9bd;font-weight:400}
+  .paynote{margin-top:18px;font-size:12px;color:#a8a298;line-height:1.8}
+  .paynote .star{color:var(--amber)}
+
+  /* benefits */
+  .benefit{display:grid;gap:14px}
+  .bgrp{background:var(--paper);border:1px solid var(--line);border-radius:3px;padding:18px 20px}
+  .bgrp .h{font-family:"Zen Kaku Gothic New";font-weight:700;font-size:14.5px;margin-bottom:11px;
+    color:var(--ink);display:flex;align-items:center;gap:9px}
+  .bgrp .h .bar{width:4px;height:16px;background:var(--amber)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-size:12.5px;background:var(--concrete);border:1px solid var(--line);
+    padding:6px 12px;border-radius:20px;color:#2a2d34}
+  .holiday{font-size:14px;line-height:1.9;color:#2a2d34}
+  .holiday b{font-weight:700;color:var(--ink)}
+
+  /* CEO */
+  .ceo{background:var(--ink);color:var(--paper);padding:48px 40px}
+  @media(max-width:620px){.ceo{padding:48px 24px}}
+  .ceo .lbl{font-size:11px;letter-spacing:.2em;color:var(--amber);margin-bottom:20px}
+  .ceo p{font-size:15.5px;line-height:2;color:#ddd7cb;margin-bottom:16px}
+  .ceo p .hl{color:var(--paper);font-weight:700}
+  .ceo .sign{margin-top:24px;font-family:"Zen Kaku Gothic New";font-weight:700;font-size:14px;color:#b9b3a7}
+  .ceo .sign b{color:var(--paper)}
+
+  /* CTA */
+  .cta{background:var(--amber);color:var(--ink);padding:46px 40px;text-align:center}
+  @media(max-width:620px){.cta{padding:46px 24px}}
+  .cta h3{font-family:"Zen Kaku Gothic New";font-weight:900;font-size:clamp(22px,5.4vw,30px);line-height:1.4}
+  .cta p{margin-top:14px;font-size:14.5px;font-weight:500;max-width:46ch;margin-left:auto;margin-right:auto}
+  .cta .btn{display:inline-block;margin-top:26px;background:var(--ink);color:var(--paper);
+    font-family:"Zen Kaku Gothic New";font-weight:700;font-size:17px;text-decoration:none;
+    padding:17px 46px;border-radius:3px;letter-spacing:.04em;transition:transform .15s,background .15s}
+  .cta .btn:hover{transform:translateY(-2px);background:var(--ink-soft)}
+  .cta .meta{margin-top:18px;font-size:12.5px;color:#5b4410}
+
+  footer{background:var(--ink);color:#8a857b;text-align:center;padding:26px 20px;font-size:12px;letter-spacing:.04em}
+  footer b{color:var(--paper);font-family:"Zen Kaku Gothic New";font-weight:700}
+
+  .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .rv.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+  a:focus-visible,.btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="rail" aria-hidden="true" style="display:none;"></div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="brand"><b>一蓮建設株式会社</b><span>｜神奈川県厚木市</span></div>
+    <span class="eyebrow">正社員・経験者優遇</span>
+    <h1>監督業より、<br><span class="hl">現場メインで稼ぎたい。</span></h1>
+    <p class="lead">「皆で早くやって、スパッと切り上げる」それが一蓮建設のスタイル。<b>テキパキ動ける人ほど気持ちよく稼げる</b>。</p>
+
+    <div class="spec">
+      <div class="blk">
+        <span class="k">DAILY WAGE ／ 日当</span>
+        <span class="v">13,000<small>〜</small>15,000<span class="yen">円</span></span>
+      </div>
+      <div class="blk">
+        <span class="k">MONTHLY ／ 月収目安</span>
+        <span class="v">273,000<small>〜</small>330,000<span class="yen">円</span></span>
+      </div>
+    </div>
+
+    <div class="tagrow">
+      <span class="tag">宅地造成メイン</span>
+      <span class="tag">重機手元・測量手元</span>
+      <span class="tag">神奈川県内のみ</span>
+      <span class="tag">長距離移動なし・転勤なし</span>
+      <span class="tag">20代〜70代活躍</span>
+    </div>
+  </header>
+
+  <!-- 01 WHO WE WANT -->
+  <section class="rv">
+    <div class="sec-head"><span class="sec-idx">01</span>
+      <h2 class="sec-title">こんな方を<span class="u">求めています</span></h2></div>
+    <div class="gain">
+      <p class="lbl">WHO WE WANT</p>
+      <ul>
+        <li><span class="ck">[01]</span>土木作業の現場経験がある方（20代〜50代まで歓迎）</li>
+        <li><span class="ck">[02]</span>「監督業務はいらない。現場で腕を振るいたい」という方</li>
+        <li><span class="ck">[03]</span>熟練の技術を持ちながら、今の環境や待遇に納得していない方</li>
+        <li><span class="ck">[04]</span>ダラダラ残るより、集中して仕事を終わらせたい方</li>
+        <li><span class="ck">[05]</span>神奈川県内で長く安定して働きたい方</li>
+      </ul>
+    </div>
+    <div class="notes">
+      <p class="n">本求人は「職長」としてキャリアを歩みたい方向けです。</p>
+      <p class="n">施工管理・監督へのキャリアチェンジを希望する方は、別途「土木施工管理」求人をご確認ください。</p>
+      <p class="n">未経験でも気合いと根性のある方はご応募お待ちしています。</p>
+    </div>
+  </section>
+
+  <div class="joint" aria-hidden="true"></div>
+
+  <!-- 02 CULTURE -->
+  <section class="rv">
+    <div class="sec-head"><span class="sec-idx">02</span>
+      <h2 class="sec-title">一蓮建設の<span class="u">職場について</span></h2></div>
+    <div class="grid2">
+      <div class="card"><h4><span class="dot"></span>実力で淡々と評価</h4>
+        <p>「面倒な人間関係に疲れた」「実力で評価されたい」― そんな方に合う職場です。</p></div>
+      <div class="card"><h4><span class="dot"></span>慣習・付き合いゼロ</h4>
+        <p>飲み会・忘年会は参加自由。ベタベタした付き合いも、意味のない慣習もありません。</p></div>
+      <div class="card"><h4><span class="dot"></span>20代〜70代が活躍</h4>
+        <p>現場では30代を中心に、20代〜70代まで、それぞれのペースで働いています。</p></div>
+      <div class="card"><h4><span class="dot"></span>早く終われば、早く帰る</h4>
+        <p>「皆で早くやって、スパッと切り上げる」。現場次第では退社が全然早い日もあります。</p></div>
+    </div>
+  </section>
+
+  <!-- 03 FIT / NOT FIT -->
+  <section class="rv">
+    <div class="sec-head"><span class="sec-idx">03</span>
+      <h2 class="sec-title">向いている人・<span class="u">向いていない人</span></h2></div>
+    <div class="req">
+      <div class="reqbox want">
+        <div class="lbl"><span class="pill">GOOD FIT</span>活躍しているスタッフ</div>
+        <ul>
+          <li>手を動かして、終わらせることが得意な方</li>
+          <li>作業分担・チームワークも嫌じゃない方</li>
+          <li>重機や道具の扱いに慣れている方</li>
+        </ul>
+      </div>
+      <div class="reqbox must">
+        <div class="lbl"><span class="pill">NOT FIT</span>向いていない方</div>
+        <ul>
+          <li>全国各地の現場を経験したい方</li>
+          <li>将来的に施工管理・監督職を目指している方</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="joint" aria-hidden="true"></div>
+
+  <!-- 04 SCOPE -->
+  <section class="rv">
+    <div class="sec-head"><span class="sec-idx">04</span>
+      <h2 class="sec-title">具体的な<span class="u">仕事内容</span></h2></div>
+    <div class="scope">
+      <div class="it"><span class="no">A</span><span>重機手元（スコップ・レイキ・ピック）</span></div>
+      <div class="it"><span class="no">B</span><span>監督の測量手元（トラ・レベル）</span></div>
+      <div class="it"><span class="no">C</span><span>ダンプでの資材・ガラ運搬</span></div>
+      <div class="it"><span class="no">D</span><span>CB・歩車の間配り</span></div>
+      <div class="it"><span class="no">E</span><span>据え物・生コン均し</span></div>
+    </div>
+    <p class="scope-note">※ 神奈川県内の現場のみ（長距離移動なし・転勤なし）／ ごくごく稀に都内近郊の現場もあります。</p>
+  </section>
+
+  <!-- 05 SCHEDULE -->
+  <section class="rv">
+    <div class="sec-head"><span class="sec-idx">05</span>
+      <h2 class="sec-title">1日の<span class="u">流れ（例）</span></h2></div>
+    <div class="day">
+      <div class="top"><span>標準的な1日</span><span class="badge">A DAY</span></div>
+      <div class="row"><span class="t">07:00</span><span class="a">置き場集合 <b>（近い現場なら7:30〜8:00）</b></span></div>
+      <div class="row"><span class="t">08:00</span><span class="a">現場着・作業開始</span></div>
+      <div class="row"><span class="t">10:00</span><span class="a">休憩（15分）</span></div>
+      <div class="row"><span class="t">12:00</span><span class="a">昼休憩（60分）</span></div>
+      <div class="row"><span class="t">14:00</span><span class="a">休憩（15分）</span></div>
+      <div class="row"><span class="t">15:45</span><span class="a">片づけ</span></div>
+      <div class="row"><span class="t">16:50</span><span class="a">置場着</span></div>
+      <div class="row"><span class="t">17:00</span><span class="a">退社 <b>（現場次第では全然早いです）</b></span></div>
+    </div>
+    <p class="scope-note">※ 8:00〜17:00（実働7時間30分・休憩90分）／ 残業 月平均20時間以内 ／ 平均月22日勤務 ／ 現場により置き場集合が6:45前後になる場合があります</p>
+  </section>
+
+  <div class="joint" aria-hidden="true"></div>
+
+  <!-- 06 REQUIREMENTS -->
+  <section class="rv">
+    <div class="sec-head"><span class="sec-idx">06</span>
+      <h2 class="sec-title">求める<span class="u">人材</span></h2></div>
+    <div class="req">
+      <div class="reqbox must">
+        <div class="lbl"><span class="pill">MUST</span>必須</div>
+        <ul>
+          <li>土木作業の現場経験（手元以上）</li>
+          <li>普通自動車免許（MT必須）<br><span style="color:var(--grey);font-size:12px">※資格取得希望者は支援制度あり</span></li>
+        </ul>
+      </div>
+      <div class="reqbox want">
+        <div class="lbl"><span class="pill">WANT</span>歓迎・優遇</div>
+        <ul>
+          <li>準中型・中型自動車免許</li>
+          <li>重機運転免許（ユンボ・ローラー等）</li>
+          <li>土木施工管理技士（1級・2級）</li>
+          <li>測量士補</li>
+        </ul>
+      </div>
+    </div>
+    <span class="req-foot">学歴不問 ／ 経験者歓迎</span>
+    <div class="notes">
+      <p class="n">完全未経験の方はご応募をお控えください。ただし体力・筋肉量に自信のある方は選考します。</p>
+      <p class="n">外国籍でも、日本語能力試験N2以上・MT中型自動車免許保有の意識の高い方を歓迎します。</p>
+    </div>
+  </section>
+
+  <!-- 07 PAY -->
+  <section class="rv">
+    <div class="sec-head"><span class="sec-idx">07</span>
+      <h2 class="sec-title">待遇・<span class="u">給与</span></h2></div>
+    <div class="paywrap">
+      <div class="big"><span class="num">13,000-15,000</span><span class="unit">円／日（経験・資格により上乗せ）</span></div>
+      <p class="sub"><b>重機オペ・職長クラスは基本15,000円〜</b>（＋ボーナスあり）</p>
+      <div class="payrow">
+        <div class="cell"><div class="k">月収目安</div><div class="v">27〜33万円 <small>／ 月21〜22日勤務</small></div></div>
+        <div class="cell"><div class="k">賞与</div><div class="v">年2回 <small>／ 1〜3ヶ月分</small></div></div>
+        <div class="cell"><div class="k">昇給</div><div class="v">年1回</div></div>
+        <div class="cell"><div class="k">各種手当</div><div class="v">役職／住宅／家族 <small>／ 通勤（全額支給）</small></div></div>
+      </div>
+      <p class="paynote">
+        <span class="star">★</span> 雨天・連休も最低保証あり（過去月給の平均／実質月給制）<br>
+        <span class="star">★</span> 日給月給制でも最低保証で収入が安定。雨や私用でも休みやすい<br>
+        <span class="star">★</span> 固定残業代なし ― 残業代は全額別途支給 ／ 試用期間3ヶ月・待遇変更なし
+      </p>
+    </div>
+  </section>
+
+  <!-- 08 BENEFITS -->
+  <section class="rv">
+    <div class="sec-head"><span class="sec-idx">08</span>
+      <h2 class="sec-title">休日・<span class="u">福利厚生</span></h2></div>
+    <div class="benefit">
+      <div class="bgrp">
+        <div class="h"><span class="bar"></span>休日・休暇</div>
+        <p class="holiday"><b>週休2日制</b>（第2・第4土曜＋日曜）<br>GW休暇／夏季休暇／年末年始休暇／有給休暇／家族行事休暇</p>
+      </div>
+      <div class="bgrp">
+        <div class="h"><span class="bar"></span>社会保険</div>
+        <div class="chips">
+          <span class="chip">健康保険</span><span class="chip">厚生年金保険</span>
+          <span class="chip">雇用保険</span><span class="chip">労災保険</span>
+        </div>
+      </div>
+      <div class="bgrp">
+        <div class="h"><span class="bar"></span>福利厚生</div>
+        <div class="chips">
+          <span class="chip">退職金制度</span><span class="chip">資格取得支援</span>
+          <span class="chip">健康診断</span><span class="chip">育児支援</span>
+          <span class="chip">制服等支給</span><span class="chip">車・バイク通勤OK</span>
+          <span class="chip">転勤なし</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CEO -->
+  <section class="ceo rv">
+    <p class="lbl">MESSAGE ／ 代表より</p>
+    <p>現場で手を動かして丁寧に仕事をする職人を、私は<span class="hl">心から尊重しています。</span></p>
+    <p>「監督にならないと評価されない」「経験を積んでも給与が上がらない」― そういう不満を持ったまま働いている職人が、業界にはたくさんいると思っています。</p>
+    <p>一蓮建設では、施工管理を目指さなくても、<span class="hl">現場作業のプロとして正当に評価します。</span>技術があって、テキパキ動ける人に、それに見合った日当を出したい。ただそれだけです。</p>
+    <p>「職人として、ここで長く働けそうだ」― そう思ってもらえる職場を作り続けます。</p>
+    <p class="sign">一蓮建設株式会社　<b>代表</b></p>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta rv">
+    <h3>手を動かして、<br>稼ぎたい職人へ。</h3>
+    <p>監督を目指さなくても、現場のプロとして正当に評価する。まずは話を聞きに来てください。</p>
+    <a class="btn" href="#apply">今すぐ応募！</a>
+    <p class="meta">神奈川県厚木市｜マイカー・バイク通勤OK｜神奈川県内のみ・転勤なし</p>
+  </section>
+
+  <!-- APPLY FORM -->
+  <section class="rv" id="apply" style="background:var(--concrete);padding:52px 40px 60px;">
+    <div class="sec-head"><span class="sec-idx mono">APPLY</span><h2 class="sec-title">応募<span class="u">フォーム</span></h2></div>
+    <p style="font-size:14px;color:var(--grey);line-height:1.8;margin-bottom:26px;max-width:52ch;">下記に入力して送信してください。折り返し担当者よりご連絡します。「まずは話を聞いてみたい」だけのご応募も歓迎です。</p>
+    <form action="https://formsubmit.co/office.ichiren@gmail.com" method="POST" style="display:grid;gap:18px;max-width:560px;">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_subject" value="【求人応募】土木作業員（手元・雑工）">
+      <label style="display:grid;gap:7px;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:13.5px;color:var(--ink);">お名前 <span style="color:var(--rust);">*</span>
+        <input type="text" name="お名前" required style="font-family:'Noto Sans JP',sans-serif;font-size:15px;padding:13px 14px;border:1px solid var(--line);border-radius:3px;background:var(--paper);color:var(--ink);">
+      </label>
+      <label style="display:grid;gap:7px;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:13.5px;color:var(--ink);">電話番号 <span style="color:var(--rust);">*</span>
+        <input type="tel" name="電話番号" required style="font-family:'Noto Sans JP',sans-serif;font-size:15px;padding:13px 14px;border:1px solid var(--line);border-radius:3px;background:var(--paper);color:var(--ink);">
+      </label>
+      <label style="display:grid;gap:7px;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:13.5px;color:var(--ink);">メールアドレス
+        <input type="email" name="メールアドレス" style="font-family:'Noto Sans JP',sans-serif;font-size:15px;padding:13px 14px;border:1px solid var(--line);border-radius:3px;background:var(--paper);color:var(--ink);">
+      </label>
+      <label style="display:grid;gap:7px;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:13.5px;color:var(--ink);">年齢
+        <input type="text" name="年齢" style="font-family:'Noto Sans JP',sans-serif;font-size:15px;padding:13px 14px;border:1px solid var(--line);border-radius:3px;background:var(--paper);color:var(--ink);">
+      </label>
+      <label style="display:grid;gap:7px;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:13.5px;color:var(--ink);">経験・志望動機・ご質問など
+        <textarea name="経験・志望動機・ご質問" rows="5" style="font-family:'Noto Sans JP',sans-serif;font-size:15px;padding:13px 14px;border:1px solid var(--line);border-radius:3px;background:var(--paper);color:var(--ink);resize:vertical;"></textarea>
+      </label>
+      <button type="submit" style="justify-self:start;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:16px;color:var(--ink);background:var(--amber);border:0;padding:16px 48px;border-radius:3px;letter-spacing:.04em;cursor:pointer;transition:transform .15s,filter .15s;" onmouseover="this.style.transform='translateY(-2px)';this.style.filter='brightness(1.05)';" onmouseout="this.style.transform='translateY(0)';this.style.filter='none';">送信する →</button>
+    </form>
+  </section>
+
+  <div style="background:var(--concrete);text-align:center;padding:30px 20px 40px;">
+    <a href="recruit-index.html" style="display:inline-flex;align-items:center;gap:9px;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:15px;color:var(--ink);text-decoration:none;border:1.5px solid var(--ink);padding:13px 34px;border-radius:999px;transition:transform .15s,background .15s,color .15s;" onmouseover="this.style.background='var(--ink)';this.style.color='var(--paper)';this.style.transform='translateY(-2px)';" onmouseout="this.style.background='transparent';this.style.color='var(--ink)';this.style.transform='translateY(0)';">← 求人一覧に戻る</a>
+  </div>
+
+  <footer><b>一蓮建設株式会社</b>　宅地造成・土木工事｜神奈川県厚木市</footer>
+</div>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
