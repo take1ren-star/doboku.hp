@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var isMobile=/Mobi|Android|iPhone|iPod/i.test(navigator.userAgent);if(!isMobile&&window.innerWidth>900&&!/[?&]sp=1/.test(location.search)){location.replace('index.html'+location.hash);}}catch(e){}})();</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Dela+Gothic+One&family=Shippori+Mincho+B1:wght@600;700;800&family=Zen+Old+Mincho:wght@500;600;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; }
+  ::selection { background: #FF2E9A; color: #fff; }
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .sp-plus { transform: rotate(45deg); }
+  @keyframes spSpin { to { transform: rotate(360deg); } }
+  @keyframes spFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  @keyframes spMarquee { to { transform: translateX(-50%); } }
+  @keyframes spBlob { 0%,100% { border-radius: 62% 38% 42% 58% / 56% 44% 56% 44%; transform: rotate(0deg) scale(1); } 50% { border-radius: 40% 60% 60% 40% / 55% 45% 55% 45%; transform: rotate(8deg) scale(1.04); } }
+  @keyframes spShift { 0%,100% { background-position:0% 50%; } 50% { background-position:100% 50%; } }
+  .sp-reveal { opacity: 0; transform: translateY(30px) scale(.985); filter: blur(6px); transition: opacity 1s cubic-bezier(.22,1,.36,1), transform 1.05s cubic-bezier(.22,1,.36,1), filter .9s cubic-bezier(.22,1,.36,1); will-change: opacity, transform, filter; }
+  .sp-reveal.in { opacity: 1; transform: none; filter: blur(0); }
+  .sp-voice-track::-webkit-scrollbar { display: none; }
+</style>
+</helmet>
+
+<div style="font-family:'Zen Kaku Gothic New',sans-serif; background:#FFFFFF; color:#1F3A5C; max-width:440px; margin:0 auto; position:relative; overflow-x:hidden; box-shadow:0 0 60px -20px rgba(0,0,0,.15);">
+
+  <div ref="{{ progressRef }}" style="position:fixed; top:0; left:0; height:3px; width:0%; background:linear-gradient(90deg,#8E72C9,#ED88B0); z-index:200; max-width:440px;"></div>
+
+  <!-- HEADER -->
+  <header style="position:sticky; top:0; z-index:150; display:flex; align-items:center; justify-content:space-between; gap:10px; padding:11px 16px; background:rgba(255,255,255,.9); backdrop-filter:blur(12px); border-bottom:1px solid rgba(31,58,92,.08);">
+    <div style="display:flex; align-items:center;">
+      <img src="./logo-mark-blue.png" alt="一蓮建設" style="height:38px; width:auto; display:block;">
+      <div style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:16px; color:#1F3A5C; margin-left:10px;">一蓮建設株式会社</div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="position:relative; padding:30px 20px 40px; overflow:hidden;">
+    <div style="position:absolute; inset:0; z-index:0; background-image:linear-gradient(to bottom, rgba(255,255,255,.42) 0%, rgba(255,255,255,.68) 42%, rgba(255,255,255,.86) 78%, #FFFFFF 100%), url('./sp-hero-city.jpg'); background-size:cover; background-position:center 30%;"></div>
+
+    <div style="position:relative; z-index:2; padding-top:60px;">
+      <div style="display:none; align-items:center; gap:8px; font-family:'Space Mono',monospace; font-size:10.5px; letter-spacing:.08em; color:#1F3A5C; background:#fff; border:1.5px solid #1F3A5C; padding:7px 13px; border-radius:999px; margin-bottom:18px; white-space:nowrap; max-width:100%;">
+        <span style="width:7px; height:7px; background:#ED88B0; border-radius:50%; flex-shrink:0;"></span>RECRUIT 2026 — 仲間募集中
+      </div>
+      <h1 style="font-family:'Zen Old Mincho',serif; font-weight:900; font-size:30px; line-height:1.7; letter-spacing:.02em; margin:0 0 26px; white-space:nowrap; text-shadow:0 1px 3px rgba(255,255,255,.9), 0 0 14px rgba(255,255,255,.8);">
+        人間関係は<span style="color:#1F3A5C;">柔軟</span>に、<br>施工は重厚、基本に忠実。
+      </h1>
+      <div style="display:flex; align-items:center; gap:12px; margin:0 0 20px;">
+        <span style="flex:1; height:2px; background:rgba(255,255,255,.9); border-radius:2px;"></span>
+        <span style="width:6px; height:6px; border-radius:50%; background:#fff; flex-shrink:0;"></span>
+        <span style="flex:1; height:2px; background:rgba(255,255,255,.9); border-radius:2px;"></span>
+      </div>
+      <p style="font-size:15.5px; line-height:2; font-weight:700; color:#2A3A4E; margin:0 0 22px; text-align:center; text-shadow:0 1px 2px rgba(255,255,255,.7);">
+        早く、綺麗に、安全に、確実に終わらせる。<br>
+        当たり前を、当たり前にやり切る。<br>
+        小さい現場にも、成り上がる気持ちを込めて。
+      </p>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:24px; padding:16px 22px;">
+        <div style="text-align:center; flex:1;">
+          <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:32px; line-height:1; color:#1F3A5C;">14<span style="font-size:.46em; color:#ED88B0; margin-left:1px;">年</span></div>
+          <div style="font-size:10.5px; color:#6B7280; margin-top:6px; letter-spacing:.02em;">地域とともに</div>
+        </div>
+        <div style="width:1px; height:34px; background:rgba(31,58,92,.14);"></div>
+        <div style="text-align:center; flex:1;">
+          <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:32px; line-height:1; color:#1F3A5C;">92<span style="font-size:.46em; color:#ED88B0; margin-left:1px;">%</span></div>
+          <div style="font-size:10.5px; color:#6B7280; margin-top:6px; letter-spacing:.02em;">3年定着率</div>
+        </div>
+        <div style="width:1px; height:34px; background:rgba(31,58,92,.14);"></div>
+        <div style="text-align:center; flex:1;">
+          <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:32px; line-height:1; color:#1F3A5C;">70<span style="font-size:.46em; color:#ED88B0; margin-left:1px;">%</span></div>
+          <div style="font-size:10.5px; color:#6B7280; margin-top:6px; letter-spacing:.02em;">未経験start</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div style="border-top:1.5px solid #1F3A5C; border-bottom:1.5px solid #1F3A5C; background:linear-gradient(90deg,#9AA3E8,#B5A0E0,#D3A3D6,#F0B6CE,#F6CBB8,#9AA3E8); background-size:260% 100%; animation:spShift 8s linear infinite; overflow:hidden; padding:11px 0;">
+    <div style="display:flex; white-space:nowrap; width:max-content; animation:spMarquee 34s linear infinite; font-family:'Zen Old Mincho',serif; font-weight:600; font-size:16px; color:#3A2E6E; text-shadow:0 1px 1px rgba(255,255,255,.55);">
+      <span style="display:flex; align-items:center; gap:16px; padding-right:16px;"><span>挨拶・段取り・安全・清掃・丁寧な施工といった基本を大切にし、現場ごとに責任を持って取り組んでいます。</span><span style="color:#fff;">✺</span></span>
+      <span style="display:flex; align-items:center; gap:16px; padding-right:16px;" aria-hidden="true"><span>挨拶・段取り・安全・清掃・丁寧な施工といった基本を大切にし、現場ごとに責任を持って取り組んでいます。</span><span style="color:#fff;">✺</span></span>
+    </div>
+  </div>
+
+  <!-- SERVICE -->
+  <section style="padding:48px 20px 20px;">
+    <div class="sp-reveal" data-reveal style="margin-bottom:26px;">
+      <h2 style="display:inline-block; font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:36px; line-height:1.1; margin:0; padding-bottom:8px; border-bottom:3px solid; border-image:linear-gradient(90deg,#8E72C9,#ED88B0) 1;">事業紹介</h2>
+      <div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.1em; color:#9098A6; margin-top:8px;">← swipe →</div>
+    </div>
+    <div class="sp-voice-track" style="display:flex; gap:14px; overflow-x:auto; -webkit-overflow-scrolling:touch; padding:4px 0 16px; scrollbar-width:none;">
+      <sc-for list="{{ servicesView }}" as="s" hint-placeholder-count="4">
+        <a href="{{ s.url }}" style="position:relative; flex:0 0 48vw; max-width:210px; display:flex; flex-direction:column; background:#fff; border:1px solid rgba(31,58,92,.1); border-radius:18px; overflow:hidden; text-decoration:none; color:inherit; box-shadow:0 12px 32px -20px rgba(31,58,92,.45);">
+          <div style="position:relative;">
+            {{ s.imgEl }}
+            <div style="position:absolute; top:10px; left:10px; width:30px; height:30px; border-radius:9px; background:rgba(255,255,255,.94); color:#1F3A5C; font-family:'Space Mono',monospace; font-weight:700; font-size:12px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px -4px rgba(0,0,0,.35);">{{ s.no }}</div>
+          </div>
+          <div style="padding:14px 14px 15px; display:flex; flex-direction:column; flex:1;">
+            <div style="font-family:'Space Mono',monospace; font-size:9px; letter-spacing:.14em; color:#8E72C9; font-weight:700; margin-bottom:6px;">{{ s.en }}</div>
+            <h3 style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:16px; line-height:1.35; margin:0 0 8px;">{{ s.title }}</h3>
+            <p style="font-size:12px; line-height:1.75; color:#5A6573; margin:0 0 14px;">{{ s.desc }}</p>
+            <div style="margin-top:auto; display:inline-flex; align-items:center; gap:6px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:12px; color:#1F3A5C;">詳しく見る <span style="color:#ED88B0;">→</span></div>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- INTERVIEW -->
+  <section style="padding:44px 0 24px;">
+    <div class="sp-reveal" data-reveal style="text-align:center; margin-bottom:22px; padding:0 20px;">
+      <div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:.16em; color:#8E72C9; font-weight:700; margin-bottom:10px;">INTERVIEW</div>
+      <h2 style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:27px; margin:0;">先輩社員の声</h2>
+    </div>
+    <div class="sp-voice-track" style="display:flex; gap:14px; overflow-x:auto; -webkit-overflow-scrolling:touch; padding:4px 20px 18px; scrollbar-width:none;">
+      <sc-for list="{{ interviewsView }}" as="m" hint-placeholder-count="3">
+        <div style="flex:0 0 80vw; max-width:330px; display:flex; flex-direction:column; background:#fff; border:1px solid rgba(31,58,92,.1); border-radius:20px; overflow:hidden; box-shadow:0 12px 30px -20px rgba(31,58,92,.5);">
+          <div style="position:relative;">
+            {{ m.photoEl }}
+            <div style="position:absolute; left:0; right:0; bottom:0; padding:20px 16px 12px; background:linear-gradient(to top, rgba(31,58,92,.82), transparent); color:#fff;">
+              <div style="font-family:'Zen Kaku Gothic New',sans-serif; font-size:10px; letter-spacing:.08em; font-weight:500; opacity:.92;">{{ m.role }}</div>
+              <div style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:17px;">{{ m.name }}</div>
+            </div>
+          </div>
+          <div style="padding:18px 16px 20px; display:flex; flex-direction:column; flex:1;">
+            <div style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:16px; line-height:1.5; color:#1F3A5C; margin-bottom:12px;">{{ m.headline }}</div>
+            <p style="font-family:'Zen Kaku Gothic New',sans-serif; font-size:13px; line-height:1.85; color:#5A6573; margin:0;">{{ m.body }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="text-align:center; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.1em; color:#9098A6;">← swipe →</div>
+  </section>
+
+  <!-- STRENGTH -->
+  <section style="margin-top:38px; background:linear-gradient(160deg,#C9B8EC,#B9CEF0 55%,#BEE4D6); padding:44px 20px;">
+    <div class="sp-reveal" data-reveal style="text-align:center; margin-bottom:28px;">
+      <h2 style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:27px; line-height:1.12; margin:0;">一蓮で働く、<span style="color:#5B3E9E;">4つ</span>の理由</h2>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <sc-for list="{{ strengths }}" as="p" hint-placeholder-count="4">
+        <div class="sp-reveal" data-reveal style="display:flex; align-items:center; gap:14px; background:rgba(255,255,255,.72); border-radius:14px; padding:15px 18px;">
+          <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:28px; line-height:1; color:{{ p.color }}; flex-shrink:0;">{{ p.no }}</div>
+          <h3 style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:17px; margin:0;">{{ p.title }}</h3>
+        </div>
+      </sc-for>
+    </div>
+    <div class="sp-reveal" data-reveal style="margin-top:20px; position:relative; background:linear-gradient(120deg,#1F3A5C,#4640A0 55%,#8E52A8); border-radius:18px; padding:5px 18px 20px; overflow:hidden;">
+      <div style="height:5px; margin:0 -18px 18px; background:linear-gradient(90deg,#DB4B34 0 33.33%,#F0B429 33.33% 66.66%,#3E7CC2 66.66% 100%);"></div>
+      <h3 style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; color:#fff; font-size:20px; line-height:1.3; margin:0 0 14px; text-shadow:0 2px 3px rgba(20,16,40,.5);">腕と経験を、<br><span style="color:#FFCF5C;">正当</span>に<span style="color:#8FD0FF;">評価</span>する現場へ。</h3>
+      <a href="recruit-index.html" style="display:flex; align-items:center; justify-content:center; gap:9px; background:#FFCF5C; color:#15294A; font-weight:900; font-size:14px; padding:13px; border-radius:999px; text-decoration:none;">求人情報を見る <span style="color:#C65B86;">→</span></a>
+    </div>
+  </section>
+
+  <!-- VOICES removed -->
+  <!-- CTA + LINE (side by side) -->
+  <section style="padding:24px 16px 40px;">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; align-items:stretch;">
+      <div class="sp-reveal" data-reveal style="position:relative; background:#ED88B0; color:#fff; border-radius:20px; padding:22px 16px; overflow:hidden; text-align:center; display:flex; flex-direction:column;">
+        <div style="position:absolute; top:-34px; left:-20px; width:96px; height:96px; border-radius:50%; background:#FFCF5C; opacity:.4; animation:spFloat 8s ease-in-out infinite;"></div>
+        <div style="position:relative; z-index:1; display:flex; flex-direction:column; flex:1;">
+          <div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.06em; font-weight:700; opacity:.9; margin:6px 0 2px;">仲間募集中！</div>
+          <h2 style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:22px; line-height:1.2; margin:0 0 10px;">採用エントリー</h2>
+          <div style="display:flex; flex-direction:column; gap:9px; margin-top:auto;">
+            <a href="mailto:office.ichiren@gmail.com" style="display:flex; align-items:center; justify-content:center; gap:6px; background:#1F3A5C; color:#fff; font-weight:800; font-size:13px; padding:12px 8px; border-radius:999px; text-decoration:none;">✉️ メール</a>
+            <a href="tel:0462595604" style="display:flex; align-items:center; justify-content:center; gap:6px; background:#fff; color:#1F3A5C; font-weight:800; font-size:13px; padding:12px 8px; border-radius:999px; text-decoration:none;">📞 電話</a>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://lin.ee/Imj5IEU" class="sp-reveal" data-reveal style="display:flex; flex-direction:column; background:#06C755; color:#fff; border-radius:20px; padding:22px 16px; text-align:center; text-decoration:none;">
+        <div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.06em; font-weight:700; opacity:.9; margin:6px 0 2px;">LINE公式</div>
+        <h2 style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:22px; line-height:1.2; margin:0 0 10px;">ゆるっと相談。</h2>
+        <p style="font-size:12px; font-weight:700; line-height:1.6; margin:0 0 16px;">「話を聞いてみたい」でも大歓迎。</p>
+        <span style="display:flex; align-items:center; justify-content:center; gap:6px; background:#fff; color:#06C755; font-weight:800; font-size:13px; padding:12px 8px; border-radius:999px; margin-top:auto;">友だち追加 →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div style="height:1.5px; background:#1F3A5C;"></div>
+  <footer style="padding:28px 20px 40px; display:flex; flex-direction:column; align-items:center; gap:12px; text-align:center;">
+    <img src="./logo-full.png" alt="一蓮建設株式会社" style="height:64px; width:auto;">
+    <div style="font-weight:900; font-size:15px;">一蓮建設株式会社</div>
+    <div style="font-size:12px; color:#6B7280; line-height:1.7;">土木 / エクステリア / 不動産 / テラスハウス<br>採用・お問い合わせ受付中</div>
+    <div style="display:flex; align-items:center; gap:16px; margin-top:4px;">
+      <a href="access.html" style="font-size:13px; font-weight:700; color:#1F3A5C; text-decoration:none;">所在地</a>
+      <span style="width:1px; height:12px; background:rgba(31,58,92,.25);"></span>
+      <a href="privacy.html" style="font-size:13px; font-weight:700; color:#1F3A5C; text-decoration:none;">プライバシーポリシー</a>
+    </div>
+    <div style="font-family:'Space Mono',monospace; font-size:10px; color:#9098A6; margin-top:6px;">© 2026 ICHIREN CORPORATION</div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:844}}">
+class Component extends DCLogic {
+  renderVals() {
+    const services = [
+      { no: "01", img: "./svc-doboku.jpg", title: "土木部", en: "CIVIL ENGINEERING", bg: "#EBE6F7", url: "https://ichirenfudosan.com/company.html", desc: "土地を切り盛りし、宅地や敷地の形を整える。すべての工事の出発点となる、まちづくりの基礎です。" },
+      { no: "02", img: "./svc-exterior.jpg", title: "エクステリア事業部", en: "EXTERIOR WORKS", bg: "#FBE4ED", url: "exterior-page.html", desc: "門・塀・アプローチから植栽まで。建物の“顔”となる外まわりを、機能と美しさの両面で仕上げます。" },
+      { no: "03", img: "./svc-fudosan.jpg", title: "不動産事業部", en: "REAL ESTATE", bg: "#FBEADC", url: "https://ichirenfudosan.com/pc.html", desc: "土地・建物の売買や活用のご相談に対応。施工で培った知見を活かし、最適な土地活用をご提案します。" },
+      { no: "04", img: "./svc-terrace.jpg", title: "テラスハウス事業部", en: "TERRACE HOUSE", bg: "#DEF1EA", url: "https://ichirenfudosan.com/terrace.html", desc: "設計から施工・管理までを一貫対応。暮らしやすさにこだわり、長く愛される住まいをつくります。" },
+    ];
+    const servicesView = services.map((s) => ({
+      ...s,
+      imgEl: React.createElement("img", { src: s.img, alt: s.title, style: { width: "100%", height: "124px", objectFit: "cover", display: "block" } }),
+    }));
+
+    const voices = [
+      { color: "#8E72C9", beforeImg: "./voice1b.webp", afterImg: "./voice1a.jpg", initial: "Y", name: "60代　Yご夫妻", role: "舗装・フェンス改修工事", body: "経年劣化で舗装やフェンスが傷んでいたため、以前から信頼していた一蓮建設さんに改修工事を依頼しましたが、工事前の住民への周知がとても丁寧でクレームも一切なく、見えない部分まで現場判断でしっかり対応していただき、お願いして本当に良かったと感じています。" },
+      { color: "#ED88B0", beforeImg: "./voice2b.jpg", afterImg: "./voice2a.jpg", initial: "A", name: "70代　A様", role: "庭・カーポート整備", body: "古い小屋や樹木の管理、相続への不安をきっかけに相談し、大切に育ててきた樹木を活かしながら庭やカーポートを整えていただきましたが、完成した庭は評判も良く、孫の笑顔を見るたびにお願いして良かったと感じています。" },
+      { color: "#3E7CC2", beforeImg: "./voice3b.webp", afterImg: "./voice3a.jpg", initial: "A", name: "40代　A様", role: "石積み改修・耐震工事", body: "実家の石積みにヒビが入り不安でしたが、木村社長の「大丈夫ですよ」という言葉に安心し、こちらの希望に寄り添いながら他社より大幅に抑えた金額で対応していただき、母も安心できるようになり本当に感謝しています。" },
+    ];
+    const baStyle = { width: "100%", height: "90px", objectFit: "cover", borderRadius: "10px", display: "block" };
+    const voicesView = voices.map((v) => ({
+      ...v,
+      beforeEl: React.createElement("img", { src: v.beforeImg, alt: "施工前", style: baStyle }),
+      afterEl: React.createElement("img", { src: v.afterImg, alt: "施工後", style: baStyle }),
+    }));
+
+    return {
+      progressRef: (el) => { this._progress = el; },
+      voicesTrackRef: (el) => { this._vtrack = el; },
+      services, servicesView, voices, voicesView,
+      interviews: [
+        { slot: "emp1", hasImg: true, noImg: false, img: "./emp-a.jpg", role: "土木部 / 入社3年目", name: "スタッフ A", headline: "未経験から、現場を任されるまで。", body: "工具の名前も知らないところから始めましたが、先輩が一つずつ丁寧に教えてくれました。今では現場を任される場面も増え、毎日成長を実感できます。" },
+        { slot: "emp2", hasImg: true, noImg: false, img: "./emp-b.jpg", role: "エクステリア事業部 / 入社14年目", name: "スタッフ B", headline: "自分の仕事が、まちに残る誇り。", body: "外構は建物の“顔”をつくる仕事。お客様に「きれいになった」と言ってもらえた瞬間が何よりのやりがいです。技術を磨けば磨くほど面白くなります。" },
+        { slot: "emp3", hasImg: true, noImg: false, img: "./emp-c.jpg", role: "土木部 / 入社8年目", name: "スタッフ C", headline: "資格も収入も、頑張った分だけ。", body: "資格取得は会社が費用を負担してくれるので、どんどん挑戦できます。年齢より実力を見てくれる環境で、将来にしっかり手応えを感じています。" },
+        { slot: "emp4", hasImg: true, noImg: false, img: "./emp-d.jpg", role: "土木部 / 入社12年目", name: "スタッフ D", headline: "チームで動く現場が、面白い。", body: "みんなで声を掛け合いながら一つの現場をつくり上げる達成感が魅力です。分からないことはすぐ聞ける雰囲気で、未経験の自分でも安心して働けています。" },
+        { slot: "emp5", hasImg: true, noImg: false, img: "./emp-e.jpg", role: "エクステリア事業部 / 入社6年目", name: "スタッフ E", headline: "家族との時間も、大切にできる。", body: "残業は少なめで休日もしっかり取れるので、家族と過ごす時間を大事にできます。仕事のオンオフを切り替えやすく、無理なく長く続けられる環境だと感じています。" },
+        { slot: "emp6", hasImg: true, noImg: false, img: "./emp-f.jpg", role: "土木部 / 入社14年目", name: "スタッフ F", headline: "休みが取りやすく、予定も立つ。", body: "希望休や連休も取りやすく、プライベートの予定をしっかり立てられます。しっかり働いてしっかり休む、メリハリのある働き方ができるのがありがたいです。" },
+      ],
+      get interviewsView() {
+        return this.interviews.map((m) => ({
+          ...m,
+          photoEl: m.hasImg
+            ? React.createElement("img", { src: m.img, alt: m.name, style: { width: "100%", height: "180px", objectFit: "cover", display: "block" } })
+            : React.createElement("div", { style: { width: "100%", height: "180px", background: "linear-gradient(135deg,#C9B8EC,#B9CEF0)", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontFamily: "'Space Mono',monospace", fontSize: "11px", letterSpacing: ".1em" } }, "PHOTO"),
+        }));
+      },
+      strengths: [
+        { no: "01", color: "#8E72C9", title: "未経験でも充実の社内教育", desc: "入社後は先輩がマンツーマンでサポート。工具の名前から重機の操作まで、段階を踏んでしっかり身につけられます。" },
+        { no: "02", color: "#ED88B0", title: "資格取得を全面バックアップ", desc: "重機・施工管理など、必要な資格の取得費用は会社が負担。手に職をつけ、長く稼げる人材へ。" },
+        { no: "03", color: "#46A98A", title: "ホワイトすぎる環境", desc: "残業は少なめ、休日もしっかり確保。社会保険や各種手当も完備し、無理なく長く働ける環境です。" },
+        { no: "04", color: "#5B86D6", title: "ワークライフバランス尊重", desc: "施工エリアは地域中心。転勤なし・直行直帰OKの現場も多く、生活リズムを保ちながら働けます。" },
+      ],
+    };
+  }
+  componentDidMount() {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    requestAnimationFrame(() => {
+      document.querySelectorAll("[data-reveal]").forEach((el) => io.observe(el));
+    });
+    this._onScroll = () => {
+      const y = window.scrollY || 0;
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      if (this._progress) this._progress.style.width = (h > 0 ? (y / h) * 100 : 0) + "%";
+    };
+    window.addEventListener("scroll", this._onScroll, { passive: true });
+    this._onScroll();
+  }
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener("scroll", this._onScroll);
+  }
+}
+</script>
+</body>
+</html>
