@@ -33,7 +33,7 @@
 </style>
 </helmet>
 
-<div style="font-family:'Zen Kaku Gothic New',sans-serif; background:#FFFFFF; color:#1F3A5C; max-width:440px; margin:0 auto; position:relative; overflow-x:hidden; box-shadow:0 0 60px -20px rgba(0,0,0,.15);">
+<div style="font-family:'Zen Kaku Gothic New',sans-serif; background:#EAF3FB; color:#1F3A5C; max-width:440px; margin:0 auto; position:relative; overflow-x:hidden; box-shadow:0 0 60px -20px rgba(0,0,0,.15);">
 
   <div ref="{{ progressRef }}" style="position:fixed; top:0; left:0; height:3px; width:0%; background:linear-gradient(90deg,#8E72C9,#ED88B0); z-index:200; max-width:440px;"></div>
 
@@ -47,13 +47,13 @@
 
   <!-- HERO -->
   <section style="position:relative; padding:30px 20px 40px; overflow:hidden;">
-    <div style="position:absolute; inset:0; z-index:0; background-image:linear-gradient(to bottom, rgba(255,255,255,.42) 0%, rgba(255,255,255,.68) 42%, rgba(255,255,255,.86) 78%, #FFFFFF 100%), url('./sp-hero-city.jpg'); background-size:cover; background-position:center 30%;"></div>
+    <div style="position:absolute; inset:0; z-index:0; background-image:linear-gradient(to bottom, rgba(255,255,255,.05) 0%, rgba(255,255,255,.22) 52%, rgba(255,255,255,.58) 84%, #EAF3FB 100%), url('./sp-hero-city.jpg'); background-size:cover; background-position:center 30%;"></div>
 
     <div style="position:relative; z-index:2; padding-top:60px;">
       <div style="display:none; align-items:center; gap:8px; font-family:'Space Mono',monospace; font-size:10.5px; letter-spacing:.08em; color:#1F3A5C; background:#fff; border:1.5px solid #1F3A5C; padding:7px 13px; border-radius:999px; margin-bottom:18px; white-space:nowrap; max-width:100%;">
         <span style="width:7px; height:7px; background:#ED88B0; border-radius:50%; flex-shrink:0;"></span>RECRUIT 2026 — 仲間募集中
       </div>
-      <h1 style="font-family:'Zen Old Mincho',serif; font-weight:900; font-size:30px; line-height:1.7; letter-spacing:.02em; margin:0 0 26px; white-space:nowrap; text-shadow:0 1px 3px rgba(255,255,255,.9), 0 0 14px rgba(255,255,255,.8);">
+      <h1 style="font-family:'Zen Old Mincho',serif; font-weight:900; font-size:30px; line-height:1.7; letter-spacing:.02em; margin:0 0 26px; white-space:nowrap; text-shadow:0 1px 4px rgba(255,255,255,1), 0 0 18px rgba(255,255,255,1), 0 0 30px rgba(255,255,255,.9);">
         人間関係は<span style="color:#1F3A5C;">柔軟</span>に、<br>施工は重厚、基本に忠実。
       </h1>
       <div style="display:flex; align-items:center; gap:12px; margin:0 0 20px;">
@@ -61,7 +61,7 @@
         <span style="width:6px; height:6px; border-radius:50%; background:#fff; flex-shrink:0;"></span>
         <span style="flex:1; height:2px; background:rgba(255,255,255,.9); border-radius:2px;"></span>
       </div>
-      <p style="font-size:15.5px; line-height:2; font-weight:700; color:#2A3A4E; margin:0 0 22px; text-align:center; text-shadow:0 1px 2px rgba(255,255,255,.7);">
+      <p style="font-size:15.5px; line-height:2; font-weight:700; color:#2A3A4E; margin:0 0 22px; text-align:center; text-shadow:0 1px 3px rgba(255,255,255,1), 0 0 12px rgba(255,255,255,.95);">
         早く、綺麗に、安全に、確実に終わらせる。<br>
         当たり前を、当たり前にやり切る。<br>
         小さい現場にも、成り上がる気持ちを込めて。
@@ -118,25 +118,34 @@
     </div>
   </section>
 
-  <!-- INTERVIEW -->
+  <!-- CUSTOMER VOICES -->
   <section style="padding:44px 0 24px;">
     <div class="sp-reveal" data-reveal style="text-align:center; margin-bottom:22px; padding:0 20px;">
-      <div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:.16em; color:#8E72C9; font-weight:700; margin-bottom:10px;">INTERVIEW</div>
-      <h2 style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:27px; margin:0;">先輩社員の声</h2>
+      <div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:.16em; color:#ED88B0; font-weight:700; margin-bottom:10px;">VOICE</div>
+      <h2 style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:27px; margin:0;">お客様の声</h2>
     </div>
     <div class="sp-voice-track" style="display:flex; gap:14px; overflow-x:auto; -webkit-overflow-scrolling:touch; padding:4px 20px 18px; scrollbar-width:none;">
-      <sc-for list="{{ interviewsView }}" as="m" hint-placeholder-count="3">
+      <sc-for list="{{ voicesView }}" as="v" hint-placeholder-count="3">
         <div style="flex:0 0 80vw; max-width:330px; display:flex; flex-direction:column; background:#fff; border:1px solid rgba(31,58,92,.1); border-radius:20px; overflow:hidden; box-shadow:0 12px 30px -20px rgba(31,58,92,.5);">
-          <div style="position:relative;">
-            {{ m.photoEl }}
-            <div style="position:absolute; left:0; right:0; bottom:0; padding:20px 16px 12px; background:linear-gradient(to top, rgba(31,58,92,.82), transparent); color:#fff;">
-              <div style="font-family:'Zen Kaku Gothic New',sans-serif; font-size:10px; letter-spacing:.08em; font-weight:500; opacity:.92;">{{ m.role }}</div>
-              <div style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:17px;">{{ m.name }}</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; padding:12px 12px 0;">
+            <div style="position:relative;">
+              {{ v.beforeEl }}
+              <div style="position:absolute; top:6px; left:6px; background:rgba(31,58,92,.82); color:#fff; font-family:'Space Mono',monospace; font-size:9px; font-weight:700; padding:3px 7px; border-radius:6px;">BEFORE</div>
+            </div>
+            <div style="position:relative;">
+              {{ v.afterEl }}
+              <div style="position:absolute; top:6px; left:6px; background:#ED88B0; color:#fff; font-family:'Space Mono',monospace; font-size:9px; font-weight:700; padding:3px 7px; border-radius:6px;">AFTER</div>
             </div>
           </div>
-          <div style="padding:18px 16px 20px; display:flex; flex-direction:column; flex:1;">
-            <div style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:16px; line-height:1.5; color:#1F3A5C; margin-bottom:12px;">{{ m.headline }}</div>
-            <p style="font-family:'Zen Kaku Gothic New',sans-serif; font-size:13px; line-height:1.85; color:#5A6573; margin:0;">{{ m.body }}</p>
+          <div style="padding:14px 16px 20px; display:flex; flex-direction:column; flex:1;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+              <div style="width:34px; height:34px; border-radius:50%; background:{{ v.color }}; color:#fff; font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:16px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">{{ v.initial }}</div>
+              <div>
+                <div style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:14px; color:#1F3A5C; line-height:1.2;">{{ v.name }}</div>
+                <div style="font-size:10px; color:#8E72C9; font-weight:700; margin-top:2px;">{{ v.role }}</div>
+              </div>
+            </div>
+            <p style="font-family:'Zen Kaku Gothic New',sans-serif; font-size:12.5px; line-height:1.85; color:#5A6573; margin:0;">{{ v.body }}</p>
           </div>
         </div>
       </sc-for>
@@ -164,7 +173,32 @@
     </div>
   </section>
 
-  <!-- VOICES removed -->
+  <!-- INTERVIEW (moved below 求人情報を見る) -->
+  <section style="padding:44px 0 24px;">
+    <div class="sp-reveal" data-reveal style="text-align:center; margin-bottom:22px; padding:0 20px;">
+      <div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:.16em; color:#8E72C9; font-weight:700; margin-bottom:10px;">INTERVIEW</div>
+      <h2 style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:27px; margin:0;">先輩社員の声</h2>
+    </div>
+    <div class="sp-voice-track" style="display:flex; gap:14px; overflow-x:auto; -webkit-overflow-scrolling:touch; padding:4px 20px 18px; scrollbar-width:none;">
+      <sc-for list="{{ interviewsView }}" as="m" hint-placeholder-count="3">
+        <div style="flex:0 0 80vw; max-width:330px; display:flex; flex-direction:column; background:#fff; border:1px solid rgba(31,58,92,.1); border-radius:20px; overflow:hidden; box-shadow:0 12px 30px -20px rgba(31,58,92,.5);">
+          <div style="position:relative;">
+            {{ m.photoEl }}
+            <div style="position:absolute; left:0; right:0; bottom:0; padding:20px 16px 12px; background:linear-gradient(to top, rgba(31,58,92,.82), transparent); color:#fff;">
+              <div style="font-family:'Zen Kaku Gothic New',sans-serif; font-size:10px; letter-spacing:.08em; font-weight:500; opacity:.92;">{{ m.role }}</div>
+              <div style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:17px;">{{ m.name }}</div>
+            </div>
+          </div>
+          <div style="padding:18px 16px 20px; display:flex; flex-direction:column; flex:1;">
+            <div style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:16px; line-height:1.5; color:#1F3A5C; margin-bottom:12px;">{{ m.headline }}</div>
+            <p style="font-family:'Zen Kaku Gothic New',sans-serif; font-size:13px; line-height:1.85; color:#5A6573; margin:0;">{{ m.body }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="text-align:center; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.1em; color:#9098A6;">← swipe →</div>
+  </section>
+
   <!-- CTA + LINE (side by side) -->
   <section style="padding:24px 16px 40px;">
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; align-items:stretch;">
@@ -182,8 +216,8 @@
 
       <a href="https://lin.ee/Imj5IEU" class="sp-reveal" data-reveal style="display:flex; flex-direction:column; background:#06C755; color:#fff; border-radius:20px; padding:22px 16px; text-align:center; text-decoration:none;">
         <div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.06em; font-weight:700; opacity:.9; margin:6px 0 2px;">LINE公式</div>
-        <h2 style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:22px; line-height:1.2; margin:0 0 10px;">ゆるっと相談。</h2>
-        <p style="font-size:12px; font-weight:700; line-height:1.6; margin:0 0 16px;">「話を聞いてみたい」でも大歓迎。</p>
+        <h2 style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:20px; line-height:1.2; margin:0 0 10px; white-space:nowrap;">ゆるっと相談</h2>
+        <p style="font-size:12px; font-weight:700; line-height:1.6; margin:0 0 16px;">「話を聞いてみたい」<br>でも大歓迎。</p>
         <span style="display:flex; align-items:center; justify-content:center; gap:6px; background:#fff; color:#06C755; font-weight:800; font-size:13px; padding:12px 8px; border-radius:999px; margin-top:auto;">友だち追加 →</span>
       </a>
     </div>
