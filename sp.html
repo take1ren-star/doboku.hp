@@ -44,7 +44,7 @@
 </style>
 </helmet>
 
-<div style="font-family:'Zen Kaku Gothic New',sans-serif; background:#F3F8F4; color:#16302A; max-width:440px; margin:0 auto; position:relative; overflow-x:hidden; box-shadow:0 0 60px -20px rgba(0,0,0,.15);">
+<div style="font-family:'Zen Kaku Gothic New',sans-serif; background:#E7F1EA; color:#16302A; max-width:440px; margin:0 auto; position:relative; overflow-x:hidden; box-shadow:0 0 60px -20px rgba(0,0,0,.15);">
 
   <div ref="{{ progressRef }}" style="position:fixed; top:0; left:0; height:3px; width:0%; background:linear-gradient(90deg,#0B3B2C,#4FA57F); z-index:200; max-width:440px;"></div>
 
@@ -78,25 +78,27 @@
   </div>
 
   <!-- HERO -->
-  <section style="position:relative; padding:30px 20px 40px; overflow:hidden;">
-    <div style="position:absolute; inset:0; z-index:0; background-image:linear-gradient(to bottom, rgba(255,255,255,.05) 0%, rgba(255,255,255,.22) 52%, rgba(255,255,255,.58) 84%, #F3F8F4 100%), url('./hero-town-river.png'); background-size:cover; background-position:center 30%;"></div>
+  <section style="position:relative; padding:30px 20px 40px;">
+    <div style="position:absolute; left:0; right:0; top:0; bottom:-40px; z-index:0; background-image:url('./hero-town-river.png'); background-size:cover; background-position:center 30%;"></div>
+
+    <div style="position:absolute; left:0; right:0; bottom:-40px; height:58%; z-index:1; background:linear-gradient(to bottom, rgba(231,241,234,0) 0%, rgba(231,241,234,.55) 34%, rgba(231,241,234,.88) 62%, #E7F1EA 84%);"></div>
 
     <div style="position:relative; z-index:2; padding-top:60px;">
       <div style="display:none; align-items:center; gap:8px; font-family:'Space Mono',monospace; font-size:10.5px; letter-spacing:.08em; color:#16302A; background:#fff; border:1.5px solid #16302A; padding:7px 13px; border-radius:999px; margin-bottom:18px; white-space:nowrap; max-width:100%;">
         <span style="width:7px; height:7px; background:#4FA57F; border-radius:50%; flex-shrink:0;"></span>RECRUIT 2026 — 仲間募集中
       </div>
-      <h1 style="font-family:'Zen Old Mincho',serif; font-weight:900; font-size:30px; line-height:1.7; letter-spacing:.02em; margin:0 0 26px; white-space:nowrap; text-shadow:0 1px 4px rgba(255,255,255,1), 0 0 18px rgba(255,255,255,1), 0 0 30px rgba(255,255,255,.9);">
-        人間関係は<span style="color:#16302A;">柔軟</span>に、<br>施工は重厚、基本に忠実。
+      <h1 style="font-family:'Zen Old Mincho',serif; font-weight:900; font-size:clamp(31px,9vw,40px); line-height:1.55; letter-spacing:.02em; margin:-14px 0 26px; white-space:nowrap; text-shadow:0 1px 4px rgba(255,255,255,1), 0 0 18px rgba(255,255,255,1), 0 0 30px rgba(255,255,255,.9);">
+        基本を<span style="color:#16302A;">大事</span>に、<br><span style="display:inline-block; margin-left:1.1em;">期待を超える。</span>
       </h1>
       <div style="display:flex; align-items:center; gap:12px; margin:0 0 20px;">
         <span style="flex:1; height:2px; background:rgba(255,255,255,.9); border-radius:2px;"></span>
         <span style="width:6px; height:6px; border-radius:50%; background:#fff; flex-shrink:0;"></span>
         <span style="flex:1; height:2px; background:rgba(255,255,255,.9); border-radius:2px;"></span>
       </div>
-      <p style="font-size:15.5px; line-height:2; font-weight:700; color:#2C4A3E; margin:0 0 22px; text-align:center; text-shadow:0 1px 3px rgba(255,255,255,1), 0 0 12px rgba(255,255,255,.95);">
-        早く、綺麗に、安全に、確実に終わらせる。<br>
-        当たり前を、当たり前にやり切る。<br>
-        小さい現場にも、成り上がる気持ちを込めて。
+      <p style="font-size:17.5px; line-height:2; font-weight:700; color:#2C4A3E; margin:0 0 22px; text-align:center; text-shadow:0 1px 3px rgba(255,255,255,1), 0 0 12px rgba(255,255,255,.95);">
+        神奈川県厚木市の総合建設会社。<br>
+        宅地造成・土木・外構工事、そして不動産。<br>
+        土地を見つけ、直し、活かすまでを、自社で。
       </p>
 
       <div style="display:flex; justify-content:space-between; align-items:center; margin-top:24px; padding:16px 22px;">
@@ -117,6 +119,14 @@
       </div>
     </div>
   </section>
+
+  <!-- TICKER -->
+  <div style="overflow:hidden; padding:14px 0; margin:40px 0 10px; border-top:3px solid #17694A; border-bottom:3px solid #17694A;">
+    <div style="display:flex; width:max-content; animation:spMarquee 26s linear infinite;">
+      <div style="flex:0 0 auto; display:flex; align-items:center; white-space:nowrap; font-family:'Zen Old Mincho',serif; font-weight:700; font-size:17px; letter-spacing:.04em; color:#2C4A3E; padding-right:0;">早く、綺麗に、安全に、確実に終わらせる。<span style="color:#7CC24A; margin:0 .9em;">◆</span>当たり前を、当たり前にやり切る。<span style="color:#7CC24A; margin:0 .9em;">◆</span>小さい現場にも、成り上がる気持ちを込めて。<span style="color:#7CC24A; margin:0 .9em;">◆</span></div>
+      <div aria-hidden="true" style="flex:0 0 auto; display:flex; align-items:center; white-space:nowrap; font-family:'Zen Old Mincho',serif; font-weight:700; font-size:17px; letter-spacing:.04em; color:#2C4A3E;">早く、綺麗に、安全に、確実に終わらせる。<span style="color:#7CC24A; margin:0 .9em;">◆</span>当たり前を、当たり前にやり切る。<span style="color:#7CC24A; margin:0 .9em;">◆</span>小さい現場にも、成り上がる気持ちを込めて。<span style="color:#7CC24A; margin:0 .9em;">◆</span></div>
+    </div>
+  </div>
 
   <!-- SERVICE -->
   <section style="padding:48px 20px 20px;">
@@ -178,7 +188,7 @@
   </section>
 
   <!-- STRENGTH -->
-  <section style="margin-top:38px; background:linear-gradient(170deg,#F3F8F4 0%,#E6F2EA 48%,#DCEEE4 100%); padding:44px 20px;">
+  <section style="margin-top:38px; padding:44px 20px;">
     <div class="sp-reveal" data-reveal style="text-align:center; margin-bottom:28px;">
       <h2 style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:27px; line-height:1.12; margin:0;">一蓮で働く、<span style="color:#0B3B2C;">4つ</span>の理由</h2>
     </div>
@@ -258,7 +268,7 @@
   </section>
 
   <!-- CONTACT FORM -->
-  <section id="contact-form" style="background:#F1F6F2; border-top:1.5px solid rgba(22,48,42,.12); padding:40px 16px 46px;">
+  <section id="contact-form" style="border-top:1.5px solid rgba(22,48,42,.12); padding:40px 16px 46px;">
     <div class="sp-reveal" data-reveal style="text-align:center; margin-bottom:22px;">
       <div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.22em; color:#4FA57F; margin-bottom:10px;">CONTACT</div>
       <h2 style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:26px; line-height:1.14; color:#16302A; margin:0 0 10px;">お問い合わせ</h2>
@@ -318,11 +328,18 @@
     </form>
   </section>
 
+  <!-- TAGLINE -->
+  <div class="sp-reveal" data-reveal style="padding:22px 74px 20px;">
+    <div style="overflow:hidden; aspect-ratio:670/360;">
+      <img src="./tagline.png" alt="泥の中に、光を見る。Reveal the value." style="width:226.3%; max-width:none; height:auto; display:block; margin-left:-56.7%; margin-top:-40.3%; mix-blend-mode:multiply;">
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <div style="height:1.5px; background:#16302A;"></div>
   <footer style="padding:28px 20px 40px; display:flex; flex-direction:column; align-items:center; gap:12px; text-align:center;">
-    <img src="./logo-full.png" alt="一蓮建設株式会社" style="height:64px; width:auto;">
-    <div style="font-weight:900; font-size:15px;">一蓮建設株式会社</div>
+    <img src="./logo-full.png" alt="一蓮建設株式会社" style="height:64px; width:auto; filter:brightness(0) saturate(100%) invert(14%) sepia(38%) saturate(1800%) hue-rotate(112deg) brightness(70%) contrast(100%);">
+    <div style="font-weight:900; font-size:15px; color:#14432F;">一蓮建設株式会社</div>
     <div style="font-size:12px; color:#6E8477; line-height:1.7;">土木 / エクステリア / 不動産 / テラスハウス<br>採用・お問い合わせ受付中</div>
     <div style="display:flex; align-items:center; gap:16px; margin-top:4px;">
       <a href="access.html" style="font-size:13px; font-weight:700; color:#16302A; text-decoration:none;">所在地</a>
