@@ -47,6 +47,18 @@
 <body>
 <x-dc>
 <helmet>
+<link rel="alternate" media="only screen and (max-width: 900px)" href="https://doboku.1ren.biz/sp.html">
+<script>
+(function () {
+  try {
+    if (location.pathname.indexOf(".dc.html") > -1) return;      // 編集プレビューでは無効
+    if (location.search.indexOf("pc=1") > -1) return;            // ?pc=1 でPC版を強制表示
+    var coarse = window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
+    var w = Math.min(window.innerWidth || 9999, (screen && screen.width) || 9999);
+    if (coarse && w <= 900) location.replace("sp.html" + location.hash);
+  } catch (e) {}
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Dela+Gothic+One&family=Shippori+Mincho+B1:wght@600;700;800&family=Zen+Old+Mincho:wght@500;600;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">

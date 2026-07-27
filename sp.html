@@ -9,6 +9,17 @@
 <x-dc>
 <helmet>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://doboku.1ren.biz/">
+<script>
+(function () {
+  try {
+    if (location.pathname.indexOf(".dc.html") > -1) return;      // 編集プレビューでは無効
+    var coarse = window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
+    var w = Math.min(window.innerWidth || 0, (screen && screen.width) || 0);
+    if (!coarse && w >= 1100) location.replace("index.html?pc=1" + location.hash);
+  } catch (e) {}
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Dela+Gothic+One&family=Shippori+Mincho+B1:wght@600;700;800&family=Zen+Old+Mincho:wght@500;600;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -174,7 +185,7 @@
     <div style="display:flex; flex-direction:column; gap:10px;">
       <sc-for list="{{ strengths }}" as="p" hint-placeholder-count="4">
         <div class="sp-reveal" data-reveal style="display:flex; align-items:center; gap:15px; background:#fff; border:1px solid rgba(22,48,42,.07); border-radius:16px; padding:16px 18px; box-shadow:0 14px 26px -22px rgba(22,48,42,.45);">
-          <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:26px; line-height:1; color:#4FA57F; flex-shrink:0; letter-spacing:-.01em;">{{ p.no }}</div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:26px; line-height:1; color:{{ p.color }}; flex-shrink:0; letter-spacing:-.01em;">{{ p.no }}</div>
           <div style="width:1px; align-self:stretch; background:rgba(22,48,42,.1); flex-shrink:0;"></div>
           <h3 style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:16.5px; line-height:1.5; letter-spacing:.01em; color:#16302A; margin:0;">{{ p.title }}</h3>
         </div>
@@ -232,7 +243,7 @@
           <h2 style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:22px; line-height:1.2; margin:0 0 10px; color:#fff;">採用エントリー</h2>
           <div style="display:flex; flex-direction:column; gap:9px; margin-top:auto;">
             <a href="mailto:office.ichiren@gmail.com" style="display:flex; align-items:center; justify-content:center; gap:6px; background:#EFF3EF; color:#16302A; font-weight:800; font-size:13px; padding:12px 8px; border-radius:999px; text-decoration:none;">✉️ メール</a>
-            <a href="tel:0462595604" style="display:flex; align-items:center; justify-content:center; gap:6px; background:transparent; border:1.5px solid rgba(239,243,239,.45); color:#EFF3EF; font-weight:800; font-size:13px; padding:10.5px 8px; border-radius:999px; text-decoration:none;">📞 電話</a>
+            <a href="tel:0462595604" style="display:flex; align-items:center; justify-content:center; gap:6px; background:#D8C88C; color:#16302A; font-weight:800; font-size:13px; padding:12px 8px; border-radius:999px; text-decoration:none;"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" style="flex-shrink:0;"><path fill="#000" d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1.1l-2.3 2.1z"/></svg> 電話</a>
           </div>
         </div>
       </div>
@@ -246,6 +257,67 @@
     </div>
   </section>
 
+  <!-- CONTACT FORM -->
+  <section id="contact-form" style="background:#F1F6F2; border-top:1.5px solid rgba(22,48,42,.12); padding:40px 16px 46px;">
+    <div class="sp-reveal" data-reveal style="text-align:center; margin-bottom:22px;">
+      <div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.22em; color:#4FA57F; margin-bottom:10px;">CONTACT</div>
+      <h2 style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:26px; line-height:1.14; color:#16302A; margin:0 0 10px;">お問い合わせ</h2>
+      <p style="font-size:13px; line-height:1.85; color:#3C5049; margin:0;">採用のご応募も、外構・土木のご相談も。<br>2営業日以内にご連絡します。</p>
+    </div>
+
+    <form class="sp-reveal" data-reveal onSubmit="{{ onContactSubmit }}" style="background:#fff; border:1px solid rgba(22,48,42,.09); border-radius:18px; padding:22px 18px 24px; box-shadow:0 24px 44px -30px rgba(22,48,42,.45); display:flex; flex-direction:column; gap:18px;">
+      <label style="display:flex; flex-direction:column; gap:8px;">
+        <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:13px; color:#16302A;">お名前 <span style="color:#C4553A; font-size:11px;">必須</span></span>
+        <input name="name" type="text" required placeholder="山田 太郎" style="font-family:'Zen Kaku Gothic New',sans-serif; font-size:16px; color:#16302A; background:#F7FAF8; border:1.5px solid rgba(22,48,42,.14); border-radius:10px; padding:13px 14px; outline:none; width:100%; box-sizing:border-box;" style-focus="border-color:#4FA57F; background:#fff;">
+      </label>
+      <label style="display:flex; flex-direction:column; gap:8px;">
+        <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:13px; color:#16302A;">会社名・団体名</span>
+        <input name="company" type="text" placeholder="個人の方は空欄で結構です" style="font-family:'Zen Kaku Gothic New',sans-serif; font-size:16px; color:#16302A; background:#F7FAF8; border:1.5px solid rgba(22,48,42,.14); border-radius:10px; padding:13px 14px; outline:none; width:100%; box-sizing:border-box;" style-focus="border-color:#4FA57F; background:#fff;">
+      </label>
+      <label style="display:flex; flex-direction:column; gap:8px;">
+        <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:13px; color:#16302A;">メールアドレス <span style="color:#C4553A; font-size:11px;">必須</span></span>
+        <input name="email" type="email" required placeholder="example@mail.com" style="font-family:'Zen Kaku Gothic New',sans-serif; font-size:16px; color:#16302A; background:#F7FAF8; border:1.5px solid rgba(22,48,42,.14); border-radius:10px; padding:13px 14px; outline:none; width:100%; box-sizing:border-box;" style-focus="border-color:#4FA57F; background:#fff;">
+      </label>
+      <label style="display:flex; flex-direction:column; gap:8px;">
+        <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:13px; color:#16302A;">電話番号</span>
+        <input name="tel" type="tel" placeholder="090-1234-5678" style="font-family:'Zen Kaku Gothic New',sans-serif; font-size:16px; color:#16302A; background:#F7FAF8; border:1.5px solid rgba(22,48,42,.14); border-radius:10px; padding:13px 14px; outline:none; width:100%; box-sizing:border-box;" style-focus="border-color:#4FA57F; background:#fff;">
+      </label>
+
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:13px; color:#16302A;">お問い合わせ種別 <span style="color:#C4553A; font-size:11px;">必須</span></span>
+        <div style="display:grid; grid-template-columns:1fr; gap:8px;">
+          <sc-for list="{{ contactTopics }}" as="t" hint-placeholder-count="4">
+            <label style="display:flex; align-items:center; gap:7px; white-space:nowrap; background:#F7FAF8; border:1.5px solid rgba(22,48,42,.14); border-radius:999px; padding:11px 15px; font-family:'Zen Kaku Gothic New',sans-serif; font-size:13.5px; font-weight:600; color:#16302A;">
+              <input name="topic" type="radio" value="{{ t }}" required style="accent-color:#17694A; width:16px; height:16px; margin:0;">
+              {{ t }}
+            </label>
+          </sc-for>
+        </div>
+      </div>
+
+      <label style="display:flex; flex-direction:column; gap:8px;">
+        <span style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:13px; color:#16302A;">お問い合わせ内容 <span style="color:#C4553A; font-size:11px;">必須</span></span>
+        <textarea name="message" required rows="5" placeholder="ご質問・ご相談の内容をご記入ください。" style="font-family:'Zen Kaku Gothic New',sans-serif; font-size:16px; line-height:1.8; color:#16302A; background:#F7FAF8; border:1.5px solid rgba(22,48,42,.14); border-radius:10px; padding:13px 14px; outline:none; resize:vertical; width:100%; box-sizing:border-box;" style-focus="border-color:#4FA57F; background:#fff;"></textarea>
+      </label>
+
+      <label style="display:flex; align-items:flex-start; gap:10px; font-family:'Zen Kaku Gothic New',sans-serif; font-size:13px; line-height:1.7; color:#3C5049;">
+        <input name="agree" type="checkbox" required style="accent-color:#17694A; width:17px; height:17px; margin-top:2px; flex-shrink:0;">
+        <span><a href="privacy.html" style="color:#17694A; font-weight:700;">プライバシーポリシー</a>に同意のうえ送信します。</span>
+      </label>
+
+      <button type="submit" disabled="{{ contactSending }}" style="display:flex; align-items:center; justify-content:center; gap:10px; background:#16302A; color:#fff; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:16px; letter-spacing:.04em; padding:17px; border:none; border-radius:999px; width:100%; box-shadow:0 16px 32px -18px rgba(22,48,42,.6);">{{ contactBtnLabel }} <span style="font-family:'Space Mono',monospace; color:#8FB8A4;">→</span></button>
+
+      <sc-if value="{{ contactSent }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#E7F4EC; border:1.5px solid #4FA57F; border-radius:12px; padding:13px 16px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:13.5px; line-height:1.7; color:#16302A;">送信が完了しました。担当者より2営業日以内にご連絡します。</div>
+      </sc-if>
+      <sc-if value="{{ contactError }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#FBECE8; border:1.5px solid #C4553A; border-radius:12px; padding:13px 16px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:13.5px; line-height:1.7; color:#7A2E1C;">送信に失敗しました。お手数ですが電話またはメールでご連絡ください。</div>
+      </sc-if>
+
+      <p style="font-size:11.5px; line-height:1.7; color:#6B7C74; margin:0; text-align:center;">お急ぎの方は <a href="tel:0462595604" style="color:#17694A; font-weight:700;">046-259-5604</a> へお電話ください。</p>
+    </form>
+  </section>
+
   <!-- FOOTER -->
   <div style="height:1.5px; background:#16302A;"></div>
   <footer style="padding:28px 20px 40px; display:flex; flex-direction:column; align-items:center; gap:12px; text-align:center;">
@@ -257,12 +329,14 @@
       <span style="width:1px; height:12px; background:rgba(22,48,42,.25);"></span>
       <a href="privacy.html" style="font-size:13px; font-weight:700; color:#16302A; text-decoration:none;">プライバシーポリシー</a>
     </div>
+    <a href="index.html?pc=1" style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:.1em; color:#4FA57F; text-decoration:none; border:1px solid rgba(79,165,127,.5); border-radius:999px; padding:9px 20px; margin-top:4px;">PC版を表示</a>
     <div style="font-family:'Space Mono',monospace; font-size:10px; color:#7F8E84; margin-top:6px;">© 2026 ICHIREN CORPORATION</div>
   </footer>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:844}}">
 class Component extends DCLogic {
+  state = { contactStatus: "idle" };
   _setMenu(open) {
     this._menuOpen = open;
     if (this._drawer) { this._drawer.style.opacity = open ? "1" : "0"; this._drawer.style.pointerEvents = open ? "auto" : "none"; }
@@ -274,6 +348,43 @@ class Component extends DCLogic {
   }
 
   renderVals() {
+    const contactVals = {
+      contactTopics: ["採用について", "外構工事のご相談", "土木工事のご相談", "その他"],
+      contactSending: this.state.contactStatus === "sending",
+      contactSent: this.state.contactStatus === "sent",
+      contactError: this.state.contactStatus === "error",
+      contactBtnLabel: this.state.contactStatus === "sending" ? "送信中…" : "送信する",
+      onContactSubmit: async (e) => {
+        e.preventDefault();
+        if (this.state.contactStatus === "sending") return;
+        const f = e.target;
+        const v = (n) => (f.elements[n] && f.elements[n].value ? f.elements[n].value : "―");
+        const topic = f.querySelector('input[name="topic"]:checked');
+        this.setState({ contactStatus: "sending" });
+        try {
+          const res = await fetch("https://formsubmit.co/ajax/takemoto.1ren@gmail.com", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify({
+              _subject: "【一蓮建設HP・SP】お問い合わせ / " + v("name"),
+              _template: "table",
+              _captcha: "false",
+              お名前: v("name"),
+              "会社名・団体名": v("company"),
+              メールアドレス: v("email"),
+              電話番号: v("tel"),
+              お問い合わせ種別: topic ? topic.value : "―",
+              お問い合わせ内容: v("message"),
+            }),
+          });
+          if (!res.ok) throw new Error("send failed");
+          f.reset();
+          this.setState({ contactStatus: "sent" });
+        } catch (err) {
+          this.setState({ contactStatus: "error" });
+        }
+      },
+    };
     const services = [
       { no: "01", img: "./svc-doboku.jpg", title: "土木部", en: "CIVIL ENGINEERING", bg: "#E7F1EA", url: "https://ichirenfudosan.com/company.html", desc: "土地を切り盛りし、宅地や敷地の形を整える。すべての工事の出発点となる、まちづくりの基礎です。" },
       { no: "02", img: "./svc-exterior.jpg", title: "エクステリア事業部", en: "EXTERIOR WORKS", bg: "#DFEEE4", url: "exterior-page.html", desc: "門・塀・アプローチから植栽まで。建物の“顔”となる外まわりを、機能と美しさの両面で仕上げます。" },
@@ -298,6 +409,7 @@ class Component extends DCLogic {
     }));
 
     return {
+      ...contactVals,
       progressRef: (el) => { this._progress = el; },
       drawerRef: (el) => { this._drawer = el; },
       panelRef: (el) => { this._panel = el; },
@@ -326,9 +438,9 @@ class Component extends DCLogic {
       },
       strengths: [
         { no: "01", color: "#0B3B2C", title: "未経験でも充実の社内教育", desc: "入社後は先輩がマンツーマンでサポート。工具の名前から重機の操作まで、段階を踏んでしっかり身につけられます。" },
-        { no: "02", color: "#4FA57F", title: "資格取得を全面バックアップ", desc: "重機・施工管理など、必要な資格の取得費用は会社が負担。手に職をつけ、長く稼げる人材へ。" },
+        { no: "02", color: "#17694A", title: "資格取得を全面バックアップ", desc: "重機・施工管理など、必要な資格の取得費用は会社が負担。手に職をつけ、長く稼げる人材へ。" },
         { no: "03", color: "#4FA57F", title: "ホワイトすぎる環境", desc: "残業は少なめ、休日もしっかり確保。社会保険や各種手当も完備し、無理なく長く働ける環境です。" },
-        { no: "04", color: "#2E8C63", title: "ワークライフバランス尊重", desc: "施工エリアは地域中心。転勤なし・直行直帰OKの現場も多く、生活リズムを保ちながら働けます。" },
+        { no: "04", color: "#7CC24A", title: "ワークライフバランス尊重", desc: "施工エリアは地域中心。転勤なし・直行直帰OKの現場も多く、生活リズムを保ちながら働けます。" },
       ],
     };
   }
