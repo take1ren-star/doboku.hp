@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://1ren.biz/sitemap.xml
+Sitemap: https://ichiren.co.jp/sitemap.xml
