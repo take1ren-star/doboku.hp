@@ -77,8 +77,22 @@
   @keyframes twinkle { 0%,100% { opacity:.25; transform: scale(.7); } 50% { opacity:1; transform: scale(1); } }
   .reveal { opacity: 0; transform: translateY(34px); transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); }
   .reveal.in { opacity: 1; transform: none; }
-  .svc-card { cursor: pointer; }
-  .svc-card:hover { transform: translateY(-6px); }
+  .lp-input { box-sizing: border-box; width: 100%; transition: border-color .2s ease, box-shadow .2s ease; }
+  .lp-input:focus { outline: none; border-color: #4FA57F; box-shadow: 0 0 0 4px rgba(79,165,127,.18); }
+  .lp-submit { transition: transform .28s cubic-bezier(.16,1,.3,1), box-shadow .28s ease, background .2s ease; box-shadow: 0 12px 26px -12px rgba(22,48,42,.6); }
+  .lp-submit:hover { transform: translateY(-4px) scale(1.03); background: #1F4A38; box-shadow: 0 22px 40px -14px rgba(22,48,42,.6); }
+  .lp-recruit-btn { background: #DCCB8A; box-shadow: 0 16px 40px -10px rgba(12,60,42,.35); transition: transform .34s cubic-bezier(.16,1,.3,1), box-shadow .34s cubic-bezier(.16,1,.3,1), background .28s ease; will-change: transform; }
+  .lp-recruit-btn:hover { transform: translateY(-8px) scale(1.09); background: #E8D99F; box-shadow: 0 34px 64px -18px rgba(12,60,42,.5); }
+  .lp-recruit-btn:hover span { transform: translateX(6px); }
+  .lp-recruit-btn span { display: inline-block; transition: transform .28s cubic-bezier(.16,1,.3,1); }
+  @media (hover: none) { .lp-recruit-btn:hover { transform: none; } }
+  .svc-more { transition: background .28s ease, box-shadow .28s ease, transform .28s ease; box-shadow: 0 8px 18px -10px rgba(22,48,42,.6); }
+  .svc-more-arw { transition: transform .28s cubic-bezier(.16,1,.3,1); }
+  .svc-card:hover .svc-more { background: #4FA57F; box-shadow: 0 14px 26px -10px rgba(79,165,127,.75); }
+  .svc-card:hover .svc-more-arw { transform: translateX(5px); }
+  .svc-card { cursor: pointer; box-shadow: 0 16px 40px -24px rgba(22,48,42,.45); transition: transform .38s cubic-bezier(.16,1,.3,1), box-shadow .38s cubic-bezier(.16,1,.3,1); will-change: transform; }
+  .svc-card:hover { transform: translateY(-16px) scale(1.07); box-shadow: 0 38px 70px -30px rgba(22,48,42,.55); z-index: 20; position: relative; }
+  @media (hover: none) { .svc-card:hover { transform: none; box-shadow: none; } }
   .voices-track::-webkit-scrollbar { display: none; width: 0; height: 0; }
   h1, h2, h3 { text-wrap: balance; }
   p { text-wrap: pretty; }
@@ -190,7 +204,7 @@
 
     <div class="lp-svc-grid" style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px;">
       <sc-for list="{{ servicesView }}" as="s" hint-placeholder-count="4">
-        <div class="svc-card reveal" data-reveal style="background:#fff; border:2.5px solid #17694A; border-radius:24px; overflow:hidden; display:flex; flex-direction:column; min-height:420px; position:relative; box-shadow:0 16px 40px -24px rgba(22,48,42,.45); transition:transform .4s cubic-bezier(.16,1,.3,1);">
+        <div class="svc-card reveal" data-reveal style="background:#fff; border:2.5px solid #17694A; border-radius:24px; overflow:hidden; display:flex; flex-direction:column; min-height:420px; position:relative; ">
           <div style="position:relative;">
             {{ s.imgEl }}
             <div style="position:absolute; top:14px; left:14px; width:40px; height:40px; border-radius:12px; background:rgba(255,255,255,.94); color:#16302A; font-family:'Space Mono',monospace; font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px -6px rgba(0,0,0,.35);">{{ s.no }}</div>
@@ -199,7 +213,7 @@
             <div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:.14em; color:#2E8C63; font-weight:700; margin-bottom:8px;">{{ s.en }}</div>
             <h3 style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:22px; line-height:1.35; margin:0 0 12px;">{{ s.title }}</h3>
             <p style="font-size:14px; line-height:1.8; color:#4C5B53; margin:0 0 18px;">{{ s.desc }}</p>
-            <div style="margin-top:auto; display:inline-flex; align-items:center; gap:7px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:14px; color:#16302A;">詳しく見る <span style="color:#4FA57F;">→</span></div>
+            <div class="svc-more" style="margin-top:auto; align-self:flex-start; display:inline-flex; align-items:center; gap:9px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:15px; color:#fff; background:#16302A; padding:13px 22px; border-radius:999px;">詳しく見る <span class="svc-more-arw" style="display:inline-block;">→</span></div>
           </div>
           <sc-if value="{{ s.external }}" hint-placeholder-val="{{ false }}">
             <a href="{{ s.url }}" target="_blank" rel="noopener" aria-label="{{ s.title }}" style="position:absolute; inset:0; z-index:4; border-radius:24px;"></a>
@@ -283,7 +297,7 @@
             <span style="color:#DCCB8A;">正当</span>に<span style="color:#A9D6BE;">評価</span>する現場へ。
           </h3>
           </div>
-          <a href="recruit-index.html" style="display:inline-flex; align-items:center; gap:12px; background:#DCCB8A; color:#16302A; font-weight:900; font-size:24px; padding:28px 56px; border-radius:999px; text-decoration:none; box-shadow:0 16px 40px -10px rgba(12,60,42,.35); white-space:nowrap; flex-shrink:0;">求人情報を見る <span style="color:#2E8C63;">→</span></a>
+          <a href="recruit-index.html" class="lp-recruit-btn" style="display:inline-flex; align-items:center; gap:12px; color:#16302A; font-weight:900; font-size:24px; padding:28px 56px; border-radius:999px; text-decoration:none; white-space:nowrap; flex-shrink:0;">求人情報を見る <span style="color:#2E8C63;">→</span></a>
         </div>
       </div>
 
@@ -343,7 +357,7 @@
         <div style="display:inline-flex; align-items:center; gap:10px; background:rgba(255,255,255,.18); padding:8px 16px; border-radius:999px; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:.1em; margin-bottom:22px;">
           <span style="width:20px;height:20px;border-radius:6px;background:#fff;color:#06C755;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;">L</span> 公式LINE
         </div>
-        <h2 class="lp-line-title" style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:clamp(24px,3vw,42px); line-height:1.14; margin:0 0 12px;">LINEで、ゆるっと相談。</h2>
+        <h2 class="lp-line-title" style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:clamp(24px,3vw,42px); line-height:1.14; margin:0 0 12px;">LINEで、<br>ゆるっと相談。</h2>
         <p style="font-size:clamp(14px,1.6vw,20px); line-height:1.7; font-weight:700; opacity:.98; margin:0 0 20px;">「ちょっと話を聞いてみたい」だけでも大歓迎。</p>
         <a href="https://lin.ee/Imj5IEU" style="display:inline-flex; align-items:center; gap:10px; background:#fff; color:#06C755; font-weight:800; font-size:clamp(14px,1.5vw,17px); padding:14px 28px; border-radius:999px; text-decoration:none;">友だち追加する →</a>
       </div>
@@ -362,6 +376,42 @@
         </div>
       </div>
     </div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section id="form" class="reveal" data-reveal style="max-width:1320px; margin:0 auto; padding:0 clamp(20px,5vw,72px) clamp(70px,9vw,120px);">
+    <div style="background:#fff; border:2.5px solid #17694A; border-radius:32px; padding:clamp(28px,4vw,64px);">
+      <div style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:.22em; color:#4FA57F; margin-bottom:14px; text-align:center;">CONTACT FORM</div>
+      <h2 style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:clamp(24px,3vw,40px); line-height:1.14; margin:0 0 14px; text-align:center;">お問い合わせフォーム</h2>
+      <p style="font-size:clamp(14px,1.4vw,17px); line-height:1.9; color:#4C5B53; margin:0 auto 32px; max-width:52em; text-align:center;">工事のご相談・お見積り、採用のご質問など、どちらでも承ります。担当者より折り返しご連絡いたします。</p>
+      <form action="https://formsubmit.co/info@ichiren.co.jp" method="POST" style="display:grid; gap:20px; max-width:660px; margin:0 auto;">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_subject" value="【HP】お問い合わせ">
+        <label style="display:grid; gap:8px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:14px; color:#16302A;"><span>お名前 <span style="color:#B4472F;">*</span></span>
+          <input type="text" name="お名前" required class="lp-input" style="font-family:'Zen Kaku Gothic New',sans-serif; font-size:16px; padding:14px 16px; border:1.5px solid #C6D8CC; border-radius:12px; background:#F7FBF8; color:#16302A;">
+        </label>
+        <label style="display:grid; gap:8px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:14px; color:#16302A;"><span>電話番号 <span style="color:#B4472F;">*</span></span>
+          <input type="tel" name="電話番号" required class="lp-input" style="font-family:'Zen Kaku Gothic New',sans-serif; font-size:16px; padding:14px 16px; border:1.5px solid #C6D8CC; border-radius:12px; background:#F7FBF8; color:#16302A;">
+        </label>
+        <label style="display:grid; gap:8px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:14px; color:#16302A;">メールアドレス
+          <input type="email" name="メールアドレス" class="lp-input" style="font-family:'Zen Kaku Gothic New',sans-serif; font-size:16px; padding:14px 16px; border:1.5px solid #C6D8CC; border-radius:12px; background:#F7FBF8; color:#16302A;">
+        </label>
+        <label style="display:grid; gap:8px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:14px; color:#16302A;">ご用件
+          <select name="ご用件" class="lp-input" style="font-family:'Zen Kaku Gothic New',sans-serif; font-size:16px; padding:14px 16px; border:1.5px solid #C6D8CC; border-radius:12px; background:#F7FBF8; color:#16302A;">
+            <option>工事のご相談・お見積り</option>
+            <option>外構・エクステリアのご相談</option>
+            <option>採用について</option>
+            <option>その他</option>
+          </select>
+        </label>
+        <label style="display:grid; gap:8px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:14px; color:#16302A;"><span>お問い合わせ内容 <span style="color:#B4472F;">*</span></span>
+          <textarea name="お問い合わせ内容" rows="6" required class="lp-input" style="font-family:'Zen Kaku Gothic New',sans-serif; font-size:16px; padding:14px 16px; border:1.5px solid #C6D8CC; border-radius:12px; background:#F7FBF8; color:#16302A; resize:vertical;"></textarea>
+        </label>
+        <button type="submit" class="lp-submit" style="justify-self:center; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:18px; color:#fff; background:#16302A; border:0; padding:19px 52px; border-radius:999px; cursor:pointer;">送信する</button>
+        <p style="font-size:12.5px; line-height:1.8; color:#7A8B80; margin:0; text-align:center;">ご記入いただいた内容は<a href="privacy.html" style="color:#2E7D5B; font-weight:700;">プライバシーポリシー</a>に基づき取り扱います。</p>
+      </form>
     </div>
   </section>
 

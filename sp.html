@@ -175,7 +175,7 @@
             <div style="font-family:'Space Mono',monospace; font-size:9px; letter-spacing:.14em; color:#0B3B2C; font-weight:700; margin-bottom:6px;">{{ s.en }}</div>
             <h3 style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:16px; line-height:1.35; margin:0 0 8px;">{{ s.title }}</h3>
             <p style="font-size:12px; line-height:1.75; color:#3E5A4E; margin:0 0 14px;">{{ s.desc }}</p>
-            <div style="margin-top:auto; display:inline-flex; align-items:center; gap:6px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:12px; color:#16302A;">詳しく見る <span style="color:#4FA57F;">→</span></div>
+            <div style="margin-top:auto; display:flex; align-items:center; justify-content:center; gap:7px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:13px; color:#fff; background:#16302A; padding:12px 14px; border-radius:999px; box-shadow:0 8px 18px -10px rgba(22,48,42,.6); min-height:44px; box-sizing:border-box;">詳しく見る <span style="color:#8FD9B4;">→</span></div>
           </div>
         </a>
       </sc-for>
@@ -203,7 +203,7 @@
           </div>
           <div style="padding:14px 16px 20px; display:flex; flex-direction:column; flex:1;">
             <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
-              <div style="width:34px; height:34px; border-radius:50%; background:{{ v.color }}; color:#fff; font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:16px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">{{ v.initial }}</div>
+              <div style="width:44px; height:44px; border-radius:50%; overflow:hidden; background:{{ v.color }}; flex-shrink:0; box-shadow:0 4px 10px -4px rgba(22,48,42,.5);">{{ v.faceEl }}</div>
               <div>
                 <div style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:14px; color:#16302A; line-height:1.2;">{{ v.name }}</div>
                 <div style="font-size:10px; color:#0B3B2C; font-weight:700; margin-top:2px;">{{ v.role }}</div>
@@ -292,6 +292,42 @@
     </div>
   </section>
 
+  <!-- CONTACT FORM -->
+  <section id="form" class="sp-reveal" data-reveal style="padding:8px 16px 30px;">
+    <div style="background:#fff; border:2px solid #17694A; border-radius:20px; padding:22px 16px 24px;">
+      <div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.14em; color:#4FA57F; margin-bottom:8px;">CONTACT FORM</div>
+      <h2 style="font-family:'Bricolage Grotesque','Zen Kaku Gothic New',sans-serif; font-weight:800; font-size:21px; line-height:1.25; margin:0 0 10px;">お問い合わせ<br>フォーム</h2>
+      <p style="font-size:13px; line-height:1.85; color:#4C5B53; margin:0 0 20px;">工事のご相談・お見積り、採用のご質問など、どちらでも承ります。</p>
+      <form action="https://formsubmit.co/info@ichiren.co.jp" method="POST" style="display:grid; gap:15px;">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_subject" value="【HP・スマホ】お問い合わせ">
+        <label style="display:grid; gap:7px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:13.5px; color:#16302A;"><span>お名前 <span style="color:#B4472F;">*</span></span>
+          <input type="text" name="お名前" required style="font-family:'Zen Kaku Gothic New',sans-serif; font-size:16px; padding:13px 14px; border:1.5px solid #C6D8CC; border-radius:12px; background:#F7FBF8; color:#16302A; box-sizing:border-box; width:100%;">
+        </label>
+        <label style="display:grid; gap:7px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:13.5px; color:#16302A;"><span>電話番号 <span style="color:#B4472F;">*</span></span>
+          <input type="tel" name="電話番号" required style="font-family:'Zen Kaku Gothic New',sans-serif; font-size:16px; padding:13px 14px; border:1.5px solid #C6D8CC; border-radius:12px; background:#F7FBF8; color:#16302A; box-sizing:border-box; width:100%;">
+        </label>
+        <label style="display:grid; gap:7px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:13.5px; color:#16302A;">メールアドレス
+          <input type="email" name="メールアドレス" style="font-family:'Zen Kaku Gothic New',sans-serif; font-size:16px; padding:13px 14px; border:1.5px solid #C6D8CC; border-radius:12px; background:#F7FBF8; color:#16302A; box-sizing:border-box; width:100%;">
+        </label>
+        <label style="display:grid; gap:7px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:13.5px; color:#16302A;">ご用件
+          <select name="ご用件" style="font-family:'Zen Kaku Gothic New',sans-serif; font-size:16px; padding:13px 14px; border:1.5px solid #C6D8CC; border-radius:12px; background:#F7FBF8; color:#16302A; box-sizing:border-box; width:100%;">
+            <option>工事のご相談・お見積り</option>
+            <option>外構・エクステリアのご相談</option>
+            <option>採用について</option>
+            <option>その他</option>
+          </select>
+        </label>
+        <label style="display:grid; gap:7px; font-family:'Zen Kaku Gothic New',sans-serif; font-weight:700; font-size:13.5px; color:#16302A;"><span>お問い合わせ内容 <span style="color:#B4472F;">*</span></span>
+          <textarea name="お問い合わせ内容" rows="5" required style="font-family:'Zen Kaku Gothic New',sans-serif; font-size:16px; padding:13px 14px; border:1.5px solid #C6D8CC; border-radius:12px; background:#F7FBF8; color:#16302A; box-sizing:border-box; width:100%; resize:vertical;"></textarea>
+        </label>
+        <button type="submit" style="font-family:'Zen Kaku Gothic New',sans-serif; font-weight:900; font-size:16px; color:#fff; background:#16302A; border:0; padding:16px 20px; border-radius:999px; cursor:pointer; box-shadow:0 12px 26px -12px rgba(22,48,42,.6);">送信する</button>
+        <p style="font-size:11.5px; line-height:1.75; color:#7A8B80; margin:0;">ご記入いただいた内容は<a href="privacy.html" style="color:#2E7D5B; font-weight:700;">プライバシーポリシー</a>に基づき取り扱います。</p>
+      </form>
+    </div>
+  </section>
+
   <!-- TAGLINE -->
   <div class="sp-reveal" data-reveal style="padding:22px 74px 20px;">
     <div style="overflow:hidden; aspect-ratio:670/360;">
@@ -339,13 +375,15 @@ class Component extends DCLogic {
     }));
 
     const voices = [
-      { color: "#0B3B2C", beforeImg: "./voice1b.webp", afterImg: "./voice1a.jpg", initial: "Y", name: "60代　Yご夫妻", role: "舗装・フェンス改修工事", body: "経年劣化で舗装やフェンスが傷んでいたため、以前から信頼していた一蓮建設さんに改修工事を依頼しましたが、工事前の住民への周知がとても丁寧でクレームも一切なく、見えない部分まで現場判断でしっかり対応していただき、お願いして本当に良かったと感じています。" },
-      { color: "#4FA57F", beforeImg: "./voice2b.jpg", afterImg: "./voice2a.jpg", initial: "A", name: "70代　A様", role: "庭・カーポート整備", body: "古い小屋や樹木の管理、相続への不安をきっかけに相談し、大切に育ててきた樹木を活かしながら庭やカーポートを整えていただきましたが、完成した庭は評判も良く、孫の笑顔を見るたびにお願いして良かったと感じています。" },
-      { color: "#2E8C63", beforeImg: "./voice3b.webp", afterImg: "./voice3a.jpg", initial: "A", name: "40代　A様", role: "石積み改修・耐震工事", body: "実家の石積みにヒビが入り不安でしたが、木村社長の「大丈夫ですよ」という言葉に安心し、こちらの希望に寄り添いながら他社より大幅に抑えた金額で対応していただき、母も安心できるようになり本当に感謝しています。" },
+      { color: "#0B3B2C", photoImg: "./voice1.webp", beforeImg: "./voice1b.webp", afterImg: "./voice1a.jpg", initial: "Y", name: "60代　Yご夫妻", role: "舗装・フェンス改修工事", body: "経年劣化で舗装やフェンスが傷んでいたため、以前から信頼していた一蓮建設さんに改修工事を依頼しましたが、工事前の住民への周知がとても丁寧でクレームも一切なく、見えない部分まで現場判断でしっかり対応していただき、お願いして本当に良かったと感じています。" },
+      { color: "#4FA57F", photoImg: "./voice2.webp", beforeImg: "./voice2b.jpg", afterImg: "./voice2a.jpg", initial: "A", name: "70代　A様", role: "庭・カーポート整備", body: "古い小屋や樹木の管理、相続への不安をきっかけに相談し、大切に育ててきた樹木を活かしながら庭やカーポートを整えていただきましたが、完成した庭は評判も良く、孫の笑顔を見るたびにお願いして良かったと感じています。" },
+      { color: "#2E8C63", photoImg: "./voice3.webp", beforeImg: "./voice3b.webp", afterImg: "./voice3a.jpg", initial: "A", name: "40代　A様", role: "石積み改修・耐震工事", body: "実家の石積みにヒビが入り不安でしたが、木村社長の「大丈夫ですよ」という言葉に安心し、こちらの希望に寄り添いながら他社より大幅に抑えた金額で対応していただき、母も安心できるようになり本当に感謝しています。" },
     ];
     const baStyle = { width: "100%", height: "90px", objectFit: "cover", borderRadius: "10px", display: "block" };
+    const faceStyle = { width: "100%", height: "100%", objectFit: "cover", display: "block" };
     const voicesView = voices.map((v) => ({
       ...v,
+      faceEl: React.createElement("img", { src: v.photoImg, alt: v.name, loading: "lazy", style: faceStyle }),
       beforeEl: React.createElement("img", { src: v.beforeImg, alt: "施工前", style: baStyle }),
       afterEl: React.createElement("img", { src: v.afterImg, alt: "施工後", style: baStyle }),
     }));
